@@ -55,7 +55,9 @@ transition:transform .2s,background .2s;}
 .supp-icon{font-size:2rem;margin-bottom:6px;}
 .supp-name{font-family:‘Fredoka One’,cursive;font-size:1.1rem;margin-bottom:4px;}
 .supp-dose{font-size:.8rem;opacity:.9;font-weight:700;background:rgba(255,255,255,.2);
-border-radius:8px;padding:3px 8px;display:inline-block;margin-bottom:5px;}
+border-radius:8px;padding:3px 8px;display:inline-block;margin-bottom:5px;
+text-decoration:none !important;}
+.supp-dose *{text-decoration:none !important;}
 .supp-timing{font-size:.79rem;opacity:.87;line-height:1.55;}
 .supp-timing span{background:rgba(255,255,255,.2);border-radius:6px;padding:2px 7px;
 margin:2px 2px 2px 0;display:inline-block;font-weight:700;}
@@ -98,7 +100,7 @@ box-shadow:var(–shadow);}
 .day-macro-chip{border-radius:10px;padding:5px 11px;font-weight:800;font-size:.78rem;text-align:center;}
 
 /* MEAL CARDS */
-.meals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-bottom:18px;}
+.meals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-bottom:18px;align-items:start;}
 .meal-card{border-radius:var(–radius);padding:0;box-shadow:var(–shadow);
 border:3px solid transparent;position:relative;overflow:hidden;
 transition:transform .2s,box-shadow .2s;}
@@ -207,7 +209,7 @@ box-shadow:0 6px 20px rgba(46,204,113,.35);}
 .dtm{background:rgba(255,255,255,.25);border-radius:999px;padding:4px 13px;font-weight:800;font-size:.86rem;}
 
 /* TIPS GRID */
-.tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-bottom:38px;}
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:15px;margin-bottom:38px;}
 .tip-card{border-radius:var(–radius);padding:18px;text-align:center;
 box-shadow:var(–shadow);transition:transform .2s;}
 .tip-card:hover{transform:translateY(-4px);}
@@ -309,13 +311,13 @@ animation:floatDeco 6s ease-in-out infinite;z-index:0;}
 <!-- DAY TABS -->
 
 <div class="day-tabs">
-  <button class="day-tab active" onclick="showDay('mon',this)">🌱 Monday</button>
-  <button class="day-tab" onclick="showDay('tue',this)">🌻 Tuesday</button>
-  <button class="day-tab" onclick="showDay('wed',this)">🌊 Wednesday</button>
-  <button class="day-tab" onclick="showDay('thu',this)">🔥 Thursday</button>
-  <button class="day-tab" onclick="showDay('fri',this)">⚡ Friday</button>
-  <button class="day-tab" onclick="showDay('sat',this)">🌈 Saturday</button>
-  <button class="day-tab" onclick="showDay('sun',this)">☀️ Sunday</button>
+  <button class="day-tab active" onclick="showDay('mon',this)">🌱&nbsp;Monday</button>
+  <button class="day-tab" onclick="showDay('tue',this)">🌻&nbsp;Tuesday</button>
+  <button class="day-tab" onclick="showDay('wed',this)">🌊&nbsp;Wednesday</button>
+  <button class="day-tab" onclick="showDay('thu',this)">🔥&nbsp;Thursday</button>
+  <button class="day-tab" onclick="showDay('fri',this)">⚡&nbsp;Friday</button>
+  <button class="day-tab" onclick="showDay('sat',this)">🌈&nbsp;Saturday</button>
+  <button class="day-tab" onclick="showDay('sun',this)">☀️&nbsp;Sunday</button>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════
