@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
 <title>🥗 My Healthy Week — Full Recipe Plan</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -16,6 +17,8 @@
     --shadow-lg:0 16px 48px rgba(0,0,0,.15);
   }
   *{box-sizing:border-box;margin:0;padding:0;}
+  a{text-decoration:none !important;color:inherit !important;pointer-events:none;}
+  a[href^="tel"],a[x-apple-data-detectors]{text-decoration:none !important;color:inherit !important;pointer-events:none !important;}
   body{font-family:'Nunito',sans-serif;background:var(--bg);
     background-image:
       radial-gradient(circle at 10% 10%,rgba(46,204,113,.07) 0%,transparent 50%),
@@ -80,7 +83,7 @@ margin:38px 0 22px;display:flex;align-items:center;justify-content:center;gap:11
 /* DAY TABS */
 .day-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:26px;}
 .day-tab{background:#fff;border:3px solid #e0e0e0;border-radius:999px;padding:8px 20px;
-font-family:‘Fredoka One’,cursive;font-size:.98rem;cursor:pointer;
+font-family:‘Fredoka One’,cursive;font-size:.98rem;cursor:pointer;white-space:nowrap;
 transition:all .2s;box-shadow:0 3px 8px rgba(0,0,0,.07);}
 .day-tab:hover,.day-tab.active{background:var(–green);color:#fff;border-color:var(–green-dark);
 transform:translateY(-3px);box-shadow:0 6px 16px rgba(46,204,113,.35);}
@@ -209,7 +212,8 @@ box-shadow:0 6px 20px rgba(46,204,113,.35);}
 .dtm{background:rgba(255,255,255,.25);border-radius:999px;padding:4px 13px;font-weight:800;font-size:.86rem;}
 
 /* TIPS GRID */
-.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:15px;margin-bottom:38px;}
+.tips-grid{display:flex;flex-wrap:wrap;gap:15px;margin-bottom:38px;}
+.tips-grid .tip-card{flex:1 1 180px;max-width:calc(33% - 10px);}
 .tip-card{border-radius:var(–radius);padding:18px;text-align:center;
 box-shadow:var(–shadow);transition:transform .2s;}
 .tip-card:hover{transform:translateY(-4px);}
@@ -268,7 +272,7 @@ animation:floatDeco 6s ease-in-out infinite;z-index:0;}
     <div class="supp-card">
       <div class="supp-icon">☀️</div>
       <div class="supp-name">Vitamin D3</div>
-      <div class="supp-dose">2000–5000 IU / day</div>
+      <div class="supp-dose">2000&#8209;5000 IU / day</div>
       <div class="supp-timing"><span>🌅 With Breakfast</span> — fat-soluble, takes with eggs + avocado for best absorption</div>
       <div class="supp-why">🫀 Supports immune function, bone health & reduces liver inflammation</div>
     </div>
@@ -289,7 +293,7 @@ animation:floatDeco 6s ease-in-out infinite;z-index:0;}
     <div class="supp-card">
       <div class="supp-icon">🔋</div>
       <div class="supp-name">Acetyl L-Carnitine</div>
-      <div class="supp-dose">500–1000 mg / day</div>
+      <div class="supp-dose">500&#8209;1000 mg / day</div>
       <div class="supp-timing"><span>🌅 Morning fasted</span> or <span>🏃 Pre-workout</span> — avoid late evening (stimulating)</div>
       <div class="supp-why">🫀 Transports fatty acids into mitochondria — directly burns liver fat for energy</div>
     </div>
