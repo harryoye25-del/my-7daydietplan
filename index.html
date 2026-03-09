@@ -4,261 +4,206 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
-<title>🥗 My Healthy Week — Full Recipe Plan</title>
+<meta name="format-detection" content="telephone=no,date=no,address=no,email=no">
+<title>🥗 My Healthy Week</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --green:#2ecc71;--green-dark:#1a8a4a;--green-light:#d5f5e3;
-    --blue:#3498db;--blue-light:#d6eaf8;--blue-dark:#1a6fa0;
-    --orange:#f39c12;--pink:#fd79a8;--purple:#9b59b6;
-    --bg:#fffef5;--radius:20px;
-    --shadow:0 8px 32px rgba(0,0,0,.10);
-    --shadow-lg:0 16px 48px rgba(0,0,0,.15);
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  a{text-decoration:none !important;color:inherit !important;pointer-events:none;}
-  a[href^="tel"],a[x-apple-data-detectors]{text-decoration:none !important;color:inherit !important;pointer-events:none !important;}
-  body{font-family:'Nunito',sans-serif;background:var(--bg);
-    background-image:
-      radial-gradient(circle at 10% 10%,rgba(46,204,113,.07) 0%,transparent 50%),
-      radial-gradient(circle at 90% 15%,rgba(52,152,219,.07) 0%,transparent 50%),
-      radial-gradient(circle at 50% 85%,rgba(243,156,18,.05) 0%,transparent 50%);
-    color:#2d3436;min-height:100vh;}
+*{box-sizing:border-box;margin:0;padding:0;}
+a{text-decoration:none!important;color:inherit!important;pointer-events:none!important;}
+body{font-family:'Nunito',sans-serif;background:#fffef5;color:#2d3436;min-height:100vh;}
 
 /* HERO */
 .hero{background:linear-gradient(135deg,#1a8a4a 0%,#27ae60 40%,#2ecc71 70%,#82e0aa 100%);
 padding:48px 32px 90px;text-align:center;position:relative;overflow:hidden;
 clip-path:ellipse(110% 100% at 50% 0%);}
-.hero::before{content:’’;position:absolute;inset:0;
-background:url(“data:image/svg+xml,%3Csvg width=‘60’ height=‘60’ viewBox=‘0 0 60 60’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cg fill=’%23ffffff’ fill-opacity=‘0.05’%3E%3Ccircle cx=‘30’ cy=‘30’ r=‘20’/%3E%3C/g%3E%3C/svg%3E”);}
-.hero-emoji-row{font-size:2.4rem;letter-spacing:7px;margin-bottom:14px;animation:float 3s ease-in-out infinite;}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hero-emoji-row{font-size:2.2rem;letter-spacing:6px;margin-bottom:14px;}
 .hero h1{font-family:‘Fredoka One’,cursive;font-size:clamp(2rem,5vw,3.4rem);color:#fff;
 text-shadow:0 4px 16px rgba(0,0,0,.2);line-height:1.1;margin-bottom:10px;}
-.hero p{color:rgba(255,255,255,.9);font-size:1.05rem;font-weight:700;letter-spacing:1px;}
+.hero p{color:rgba(255,255,255,.95);font-size:1.05rem;font-weight:700;letter-spacing:1px;}
 .hero-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:18px;}
-.badge{background:rgba(255,255,255,.22);backdrop-filter:blur(8px);
-border:2px solid rgba(255,255,255,.38);color:#fff;
+.badge{background:rgba(255,255,255,.22);border:2px solid rgba(255,255,255,.38);color:#fff;
 padding:6px 15px;border-radius:999px;font-weight:800;font-size:.83rem;}
 
-/* CONTAINER */
-.container{max-width:1200px;margin:0 auto;padding:0 20px 60px;}
+.container{max-width:1100px;margin:0 auto;padding:0 20px 60px;}
 
-/* SUPPLEMENT SECTION */
-.supp-section{background:linear-gradient(135deg,#6c5ce7,#a29bfe);border-radius:var(–radius);
+/* SUPPLEMENTS */
+.supp-section{background:linear-gradient(135deg,#6c5ce7,#a29bfe);border-radius:20px;
 padding:28px 32px;margin:-46px 0 38px;position:relative;z-index:10;
-box-shadow:var(–shadow-lg);color:#fff;}
+box-shadow:0 16px 48px rgba(0,0,0,.15);color:#fff;}
 .supp-section h2{font-family:‘Fredoka One’,cursive;font-size:1.75rem;margin-bottom:18px;text-align:center;}
-.supp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;}
-.supp-card{background:rgba(255,255,255,.15);backdrop-filter:blur(10px);
-border:2px solid rgba(255,255,255,.28);border-radius:16px;padding:16px;
-transition:transform .2s,background .2s;}
-.supp-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.22);}
+.supp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+.supp-card{background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.28);
+border-radius:16px;padding:16px;transition:transform .2s;}
+.supp-card:hover{transform:translateY(-4px);}
 .supp-icon{font-size:2rem;margin-bottom:6px;}
 .supp-name{font-family:‘Fredoka One’,cursive;font-size:1.1rem;margin-bottom:4px;}
-.supp-dose{font-size:.8rem;opacity:.9;font-weight:700;background:rgba(255,255,255,.2);
+.supp-dose{font-size:.8rem;font-weight:700;background:rgba(255,255,255,.2);
 border-radius:8px;padding:3px 8px;display:inline-block;margin-bottom:5px;
-text-decoration:none !important;}
-.supp-dose *{text-decoration:none !important;}
-.supp-timing{font-size:.79rem;opacity:.87;line-height:1.55;}
+-webkit-user-select:text;}
+.supp-timing{font-size:.79rem;line-height:1.55;}
 .supp-timing span{background:rgba(255,255,255,.2);border-radius:6px;padding:2px 7px;
 margin:2px 2px 2px 0;display:inline-block;font-weight:700;}
-.supp-why{font-size:.74rem;opacity:.78;margin-top:5px;font-style:italic;}
+.supp-why{font-size:.74rem;opacity:.82;margin-top:5px;font-style:italic;}
 
 /* TARGETS */
 .targets-row{display:flex;flex-wrap:wrap;gap:11px;margin-bottom:36px;justify-content:center;}
 .target-pill{border-radius:999px;padding:10px 22px;font-weight:800;font-size:.88rem;
-display:flex;align-items:center;gap:7px;box-shadow:0 4px 12px rgba(0,0,0,.1);
-animation:popIn .5s cubic-bezier(.34,1.56,.64,1) both;}
-@keyframes popIn{from{transform:scale(.5);opacity:0}to{transform:scale(1);opacity:1}}
-.target-pill:nth-child(1){animation-delay:.0s}.target-pill:nth-child(2){animation-delay:.1s}
-.target-pill:nth-child(3){animation-delay:.2s}.target-pill:nth-child(4){animation-delay:.3s}
-.target-pill:nth-child(5){animation-delay:.4s}
+display:flex;align-items:center;gap:7px;box-shadow:0 4px 12px rgba(0,0,0,.1);}
 
-/* SECTION TITLE */
 .section-title{font-family:‘Fredoka One’,cursive;font-size:1.95rem;text-align:center;
 margin:38px 0 22px;display:flex;align-items:center;justify-content:center;gap:11px;}
 
 /* DAY TABS */
 .day-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:26px;}
-.day-tab{background:#fff;border:3px solid #e0e0e0;border-radius:999px;padding:8px 20px;
-font-family:‘Fredoka One’,cursive;font-size:.98rem;cursor:pointer;white-space:nowrap;
-transition:all .2s;box-shadow:0 3px 8px rgba(0,0,0,.07);}
-.day-tab:hover,.day-tab.active{background:var(–green);color:#fff;border-color:var(–green-dark);
-transform:translateY(-3px);box-shadow:0 6px 16px rgba(46,204,113,.35);}
+.day-tab{background:#fff;border:3px solid #ccc;border-radius:999px;padding:8px 18px;
+font-family:‘Fredoka One’,cursive;font-size:.95rem;cursor:pointer;white-space:nowrap;
+color:#555;transition:all .2s;box-shadow:0 3px 8px rgba(0,0,0,.07);}
+.day-tab:hover{background:#e8f5e9;border-color:#2ecc71;color:#1a8a4a;}
+.day-tab.active{background:#2ecc71;color:#fff;border-color:#1a8a4a;
+box-shadow:0 6px 16px rgba(46,204,113,.4);}
 
 /* DAY PANEL */
 .day-panel{display:none;}
-.day-panel.active{display:block;animation:fadeSlide .4s ease;}
-@keyframes fadeSlide{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.day-panel.active{display:block;animation:fadeUp .35s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
 .day-header{display:flex;align-items:center;gap:14px;
-background:linear-gradient(135deg,#f8f9fa,#e8f5e9);border-radius:var(–radius);
-padding:18px 26px;margin-bottom:18px;border:3px solid var(–green-light);
-box-shadow:var(–shadow);}
-.day-title{font-family:‘Fredoka One’,cursive;font-size:1.9rem;color:var(–green-dark);}
+background:#fff;border-radius:20px;padding:18px 26px;margin-bottom:20px;
+border:3px solid #a9dfbf;box-shadow:0 6px 20px rgba(0,0,0,.08);}
 .day-emoji{font-size:2.4rem;}
-.day-macro-strip{margin-left:auto;display:flex;gap:9px;flex-wrap:wrap;}
-.day-macro-chip{border-radius:10px;padding:5px 11px;font-weight:800;font-size:.78rem;text-align:center;}
+.day-title{font-family:‘Fredoka One’,cursive;font-size:1.8rem;color:#1a8a4a;}
+.day-chips{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;}
+.dchip{border-radius:10px;padding:5px 11px;font-weight:800;font-size:.76rem;}
 
-/* MEAL CARDS */
-.meals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-bottom:18px;align-items:start;}
-.meal-card{border-radius:var(–radius);padding:0;box-shadow:var(–shadow);
-border:3px solid transparent;position:relative;overflow:hidden;
+/* MEALS — KEY FIX: always 1 column on small, proper 3-col on wide */
+.meals-grid{display:grid;gap:20px;margin-bottom:20px;
+grid-template-columns:1fr;}
+@media(min-width:700px){
+.meals-grid{grid-template-columns:1fr 1fr;}
+}
+@media(min-width:1050px){
+.meals-grid{grid-template-columns:1fr 1fr 1fr;}
+}
+
+/* MEAL CARD */
+.meal-card{border-radius:20px;overflow:hidden;
+box-shadow:0 6px 24px rgba(0,0,0,.09);border:3px solid transparent;
 transition:transform .2s,box-shadow .2s;}
-.meal-card:hover{transform:translateY(-5px);box-shadow:var(–shadow-lg);}
-.meal-bf{background:linear-gradient(160deg,#fffde7,#fff9e0);border-color:#f9ca24;}
-.meal-lu{background:linear-gradient(160deg,#e8f4ff,#dceeff);border-color:#74b9ff;}
-.meal-di{background:linear-gradient(160deg,#ffe8f0,#ffd6e7);border-color:#fd79a8;}
+.meal-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.14);}
+.meal-bf{background:#fffde7;border-color:#f9ca24;}
+.meal-lu{background:#e8f4ff;border-color:#74b9ff;}
+.meal-di{background:#ffe8f0;border-color:#fd79a8;}
+.meal-top{height:6px;}
+.meal-bf .meal-top{background:linear-gradient(90deg,#f9ca24,#f0932b);}
+.meal-lu .meal-top{background:linear-gradient(90deg,#74b9ff,#0984e3);}
+.meal-di .meal-top{background:linear-gradient(90deg,#fd79a8,#e84393);}
+.meal-body{padding:18px 20px 16px;}
+.meal-header{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.meal-icon{font-size:1.8rem;}
+.meal-label{font-family:‘Fredoka One’,cursive;font-size:1.1rem;}
+.meal-bf .meal-label{color:#c67c10;}
+.meal-lu .meal-label{color:#1a6fa0;}
+.meal-di .meal-label{color:#b03060;}
+.meal-name{font-family:‘Fredoka One’,cursive;font-size:1.18rem;color:#2d3436;margin-bottom:5px;}
+.food-emojis{font-size:1.4rem;letter-spacing:3px;margin-bottom:10px;}
+.macro-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;}
+.mp{border-radius:999px;padding:4px 10px;font-size:.75rem;font-weight:800;border:2px solid transparent;}
+.mp-k{background:#fff3cd;color:#856404;border-color:#ffc107;}
+.mp-p{background:#d4edda;color:#155724;border-color:#28a745;}
+.mp-c{background:#cce5ff;color:#004085;border-color:#74b9ff;}
+.mp-f{background:#ffe5d0;color:#7a3419;border-color:#f39c12;}
+.mp-fi{background:#e2d9f3;color:#432874;border-color:#9b59b6;}
 
-.meal-top-bar{height:6px;width:100%;}
-.meal-bf .meal-top-bar{background:linear-gradient(90deg,#f9ca24,#f0932b);}
-.meal-lu .meal-top-bar{background:linear-gradient(90deg,#74b9ff,#0984e3);}
-.meal-di .meal-top-bar{background:linear-gradient(90deg,#fd79a8,#e84393);}
-
-.meal-body{padding:20px 22px 18px;}
-.meal-header{display:flex;align-items:center;gap:9px;margin-bottom:10px;}
-.meal-type-icon{font-size:1.9rem;}
-.meal-type-label{font-family:‘Fredoka One’,cursive;font-size:1.15rem;}
-.meal-bf .meal-type-label{color:#c67c10;}
-.meal-lu .meal-type-label{color:var(–blue-dark);}
-.meal-di .meal-type-label{color:#b03060;}
-
-.meal-name{font-family:‘Fredoka One’,cursive;font-size:1.25rem;color:#2d3436;margin-bottom:5px;}
-.food-emoji-strip{font-size:1.5rem;letter-spacing:3px;margin-bottom:10px;}
-
-/* MACRO PILLS */
-.macro-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;}
-.macro-pill{border-radius:999px;padding:4px 11px;font-size:.76rem;font-weight:800;border:2px solid transparent;}
-.mp-kcal{background:#fff3cd;color:#856404;border-color:#ffc107;}
-.mp-prot{background:#d4edda;color:#155724;border-color:#28a745;}
-.mp-carb{background:#cce5ff;color:#004085;border-color:#74b9ff;}
-.mp-fat{background:#ffe5d0;color:#7a3419;border-color:#f39c12;}
-.mp-fib{background:#e2d9f3;color:#432874;border-color:#9b59b6;}
-
-/* RECIPE TOGGLE */
-.recipe-btn{display:flex;align-items:center;gap:8px;background:none;border:2px solid currentColor;
-border-radius:999px;padding:7px 18px;font-family:‘Fredoka One’,cursive;font-size:.95rem;
-cursor:pointer;transition:all .2s;margin-bottom:0;width:fit-content;}
+/* RECIPE */
+.recipe-btn{display:flex;align-items:center;gap:7px;background:none;
+border:2px solid currentColor;border-radius:999px;padding:7px 16px;
+font-family:‘Fredoka One’,cursive;font-size:.9rem;cursor:pointer;
+transition:all .2s;width:fit-content;}
 .meal-bf .recipe-btn{color:#c67c10;}
-.meal-lu .recipe-btn{color:var(–blue-dark);}
+.meal-lu .recipe-btn{color:#1a6fa0;}
 .meal-di .recipe-btn{color:#b03060;}
-.recipe-btn:hover{transform:scale(1.05);}
-.recipe-btn .arrow{transition:transform .3s;display:inline-block;}
+.recipe-btn:hover{opacity:.8;}
+.arrow{display:inline-block;transition:transform .3s;}
 .recipe-btn.open .arrow{transform:rotate(180deg);}
-
-/* RECIPE PANEL */
-.recipe-panel{display:none;margin-top:14px;border-radius:16px;overflow:hidden;
+.recipe-panel{display:none;margin-top:12px;border-radius:14px;overflow:hidden;
 border:2px solid rgba(0,0,0,.07);}
-.recipe-panel.open{display:block;animation:fadeSlide .3s ease;}
-
-.recipe-section{padding:14px 18px;}
-.recipe-section:not(:last-child){border-bottom:2px dashed rgba(0,0,0,.08);}
-
-.rs-title{font-family:‘Fredoka One’,cursive;font-size:1rem;margin-bottom:10px;
-display:flex;align-items:center;gap:7px;}
-
-/* INGREDIENTS TABLE */
-.ing-table{width:100%;border-collapse:collapse;font-size:.84rem;}
-.ing-table th{text-align:left;padding:5px 8px;font-weight:800;font-size:.75rem;
-text-transform:uppercase;letter-spacing:.5px;opacity:.7;}
-.ing-table td{padding:5px 8px;vertical-align:top;}
+.recipe-panel.open{display:block;animation:fadeUp .25s ease;}
+.meal-bf .recipe-panel{background:#fffdf0;}
+.meal-lu .recipe-panel{background:#f0f7ff;}
+.meal-di .recipe-panel{background:#fff0f5;}
+.rs{padding:12px 16px;border-bottom:2px dashed rgba(0,0,0,.07);}
+.rs:last-child{border-bottom:none;}
+.rs-title{font-family:‘Fredoka One’,cursive;font-size:.95rem;margin-bottom:8px;
+display:flex;align-items:center;gap:6px;}
+.ing-table{width:100%;border-collapse:collapse;font-size:.82rem;}
+.ing-table th{text-align:left;padding:4px 7px;font-weight:800;font-size:.72rem;
+text-transform:uppercase;letter-spacing:.5px;opacity:.65;}
+.ing-table td{padding:4px 7px;vertical-align:top;}
 .ing-table tr:nth-child(even) td{background:rgba(0,0,0,.03);}
-.ing-table .kcal-col{text-align:right;font-weight:800;font-size:.78rem;}
-.ing-row-total td{font-weight:800;border-top:2px solid rgba(0,0,0,.12);font-size:.85rem;}
-
-/* STEPS */
-.steps-list{list-style:none;counter-reset:step-counter;}
-.steps-list li{counter-increment:step-counter;display:flex;gap:11px;margin-bottom:9px;
-font-size:.84rem;line-height:1.55;font-weight:600;}
-.steps-list li::before{content:counter(step-counter);min-width:24px;height:24px;
-border-radius:50%;display:flex;align-items:center;justify-content:center;
-font-family:‘Fredoka One’,cursive;font-size:.85rem;flex-shrink:0;margin-top:1px;}
-.meal-bf .steps-list li::before{background:#f9ca24;color:#7a4a00;}
-.meal-lu .steps-list li::before{background:#74b9ff;color:#003e7a;}
-.meal-di .steps-list li::before{background:#fd79a8;color:#7a0038;}
-
-/* TIPS */
-.tip-box{border-radius:12px;padding:10px 14px;font-size:.82rem;font-weight:700;line-height:1.5;}
+.ing-table .kc{text-align:right;font-weight:800;}
+.ing-total td{font-weight:800;border-top:2px solid rgba(0,0,0,.1);}
+.steps{list-style:none;counter-reset:s;}
+.steps li{counter-increment:s;display:flex;gap:10px;margin-bottom:8px;
+font-size:.82rem;line-height:1.5;font-weight:600;}
+.steps li::before{content:counter(s);min-width:22px;height:22px;border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+font-family:‘Fredoka One’,cursive;font-size:.8rem;flex-shrink:0;margin-top:1px;}
+.meal-bf .steps li::before{background:#f9ca24;color:#7a4a00;}
+.meal-lu .steps li::before{background:#74b9ff;color:#003e7a;}
+.meal-di .steps li::before{background:#fd79a8;color:#7a0038;}
+.tip-box{border-radius:10px;padding:9px 13px;font-size:.8rem;font-weight:700;line-height:1.5;}
 .meal-bf .tip-box{background:#fff3cd;color:#7a4a00;border-left:4px solid #f9ca24;}
 .meal-lu .tip-box{background:#cce5ff;color:#003e7a;border-left:4px solid #74b9ff;}
 .meal-di .tip-box{background:#fce4ec;color:#7a0038;border-left:4px solid #fd79a8;}
 
-/* BG COLORS FOR RECIPE SECTIONS */
-.meal-bf .recipe-panel{background:#fffdf0;}
-.meal-lu .recipe-panel{background:#f0f7ff;}
-.meal-di .recipe-panel{background:#fff0f5;}
-
 /* SUPPLEMENT SCHEDULE */
-.supp-schedule{background:linear-gradient(135deg,#f8f4ff,#ede7ff);
-border:3px solid #c39bd3;border-radius:var(–radius);padding:18px 22px;margin-top:18px;}
-.supp-schedule h3{font-family:‘Fredoka One’,cursive;font-size:1.15rem;color:#6c5ce7;
-margin-bottom:12px;display:flex;align-items:center;gap:7px;}
-.supp-time-row{display:flex;flex-wrap:wrap;gap:10px;}
-.supp-time-block{background:#fff;border-radius:14px;padding:10px 15px;
-border:2px solid #d2b4de;flex:1;min-width:155px;}
-.supp-time-block .time-label{font-family:‘Fredoka One’,cursive;font-size:.88rem;color:#6c5ce7;margin-bottom:6px;}
-.supp-item{display:flex;align-items:center;gap:6px;font-size:.81rem;font-weight:700;
-color:#4a4a6a;margin-bottom:4px;}
+.supp-sched{background:linear-gradient(135deg,#f8f4ff,#ede7ff);
+border:3px solid #c39bd3;border-radius:18px;padding:16px 20px;margin-top:16px;}
+.supp-sched h3{font-family:‘Fredoka One’,cursive;font-size:1.1rem;color:#6c5ce7;
+margin-bottom:10px;display:flex;align-items:center;gap:7px;}
+.sched-row{display:flex;flex-wrap:wrap;gap:10px;}
+.sched-block{background:#fff;border-radius:12px;padding:10px 14px;
+border:2px solid #d2b4de;flex:1;min-width:150px;}
+.sched-time{font-family:‘Fredoka One’,cursive;font-size:.85rem;color:#6c5ce7;margin-bottom:5px;}
+.sched-item{display:flex;align-items:center;gap:5px;font-size:.8rem;font-weight:700;
+color:#4a4a6a;margin-bottom:3px;}
 
 /* DAY TOTAL */
-.day-total-bar{background:linear-gradient(135deg,var(–green-dark),var(–green));
-border-radius:16px;padding:15px 22px;display:flex;flex-wrap:wrap;gap:14px;
-align-items:center;color:#fff;margin-top:14px;
-box-shadow:0 6px 20px rgba(46,204,113,.35);}
-.day-total-label{font-family:‘Fredoka One’,cursive;font-size:1.15rem;}
-.day-total-macros{display:flex;flex-wrap:wrap;gap:9px;}
-.dtm{background:rgba(255,255,255,.25);border-radius:999px;padding:4px 13px;font-weight:800;font-size:.86rem;}
+.day-total{background:linear-gradient(135deg,#1a8a4a,#2ecc71);border-radius:14px;
+padding:14px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+color:#fff;margin-top:14px;box-shadow:0 6px 20px rgba(46,204,113,.3);}
+.dt-label{font-family:‘Fredoka One’,cursive;font-size:1.1rem;}
+.dt-macros{display:flex;flex-wrap:wrap;gap:8px;}
+.dtm{background:rgba(255,255,255,.25);border-radius:999px;padding:4px 12px;
+font-weight:800;font-size:.83rem;}
 
-/* TIPS GRID */
-.tips-grid{display:flex;flex-wrap:wrap;gap:15px;margin-bottom:38px;}
-.tips-grid .tip-card{flex:1 1 180px;max-width:calc(33% - 10px);}
-.tip-card{border-radius:var(–radius);padding:18px;text-align:center;
-box-shadow:var(–shadow);transition:transform .2s;}
+/* TIPS */
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:38px;}
+@media(max-width:700px){.tips-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:440px){.tips-grid{grid-template-columns:1fr;}}
+.tip-card{border-radius:18px;padding:18px;text-align:center;
+box-shadow:0 4px 14px rgba(0,0,0,.08);transition:transform .2s;}
 .tip-card:hover{transform:translateY(-4px);}
-.tip-emoji{font-size:2.3rem;margin-bottom:9px;}
-.tip-title{font-family:‘Fredoka One’,cursive;font-size:.98rem;margin-bottom:5px;}
-.tip-text{font-size:.79rem;font-weight:600;line-height:1.5;opacity:.85;}
+.tip-emoji{font-size:2.2rem;margin-bottom:8px;}
+.tip-title{font-family:‘Fredoka One’,cursive;font-size:.95rem;margin-bottom:5px;}
+.tip-text{font-size:.78rem;font-weight:600;line-height:1.5;}
 
-/* DECO */
-.deco-emoji{position:fixed;font-size:1.7rem;opacity:.11;pointer-events:none;
-animation:floatDeco 6s ease-in-out infinite;z-index:0;}
-@keyframes floatDeco{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-18px) rotate(8deg)}}
-
-.footer{text-align:center;padding:30px;font-size:.81rem;color:#888;font-weight:700;}
-
-@media(max-width:600px){
-.day-macro-strip{display:none;}
-.meals-grid{grid-template-columns:1fr;}
-}
+.footer{text-align:center;padding:30px;font-size:.8rem;color:#888;font-weight:700;line-height:1.8;}
 </style>
 
 </head>
 <body>
 
-<!-- Floating deco -->
-
-<div class="deco-emoji" style="top:12%;left:1.5%;animation-delay:0s">🥑</div>
-<div class="deco-emoji" style="top:28%;right:2%;animation-delay:1s">🐟</div>
-<div class="deco-emoji" style="top:50%;left:.8%;animation-delay:2s">🥦</div>
-<div class="deco-emoji" style="top:68%;right:1.5%;animation-delay:.5s">🍋</div>
-<div class="deco-emoji" style="top:84%;left:2%;animation-delay:1.5s">🍓</div>
-<div class="deco-emoji" style="top:40%;right:1%;animation-delay:2.5s">🥚</div>
-
-<!-- HERO -->
-
 <div class="hero">
   <div class="hero-emoji-row">🥗🐟🥦🍋🫐🥚🍤🫘🥑</div>
   <h1>My Healthy Week 🌿</h1>
-  <p>High-Protein · Low-Calorie · Fatty Liver Friendly · Full Recipes with Exact Quantities</p>
+  <p>High-Protein · Low-Calorie · Fatty Liver Friendly · Full Recipes</p>
   <div class="hero-badges">
     <span class="badge">🔥 ~1700 kcal/day</span>
     <span class="badge">💪 ~130g Protein</span>
     <span class="badge">🫀 Liver Safe</span>
-    <span class="badge">📖 21 Detailed Recipes</span>
-    <span class="badge">💊 Supplement Schedule</span>
-    <span class="badge">⚖️ Exact Quantities</span>
+    <span class="badge">📖 21 Recipes</span>
+    <span class="badge">💊 Supplements</span>
   </div>
 </div>
 
@@ -272,35 +217,35 @@ animation:floatDeco 6s ease-in-out infinite;z-index:0;}
     <div class="supp-card">
       <div class="supp-icon">☀️</div>
       <div class="supp-name">Vitamin D3</div>
-      <div class="supp-dose">2000&#8209;5000 IU / day</div>
-      <div class="supp-timing"><span>🌅 With Breakfast</span> — fat-soluble, takes with eggs + avocado for best absorption</div>
-      <div class="supp-why">🫀 Supports immune function, bone health & reduces liver inflammation</div>
+      <div class="supp-dose">2000 to 5000 IU / day</div>
+      <div class="supp-timing"><span>🌅 With Breakfast</span> — fat-soluble, take with eggs + avocado</div>
+      <div class="supp-why">🫀 Supports immune function, bone health &amp; reduces liver inflammation</div>
     </div>
     <div class="supp-card">
       <div class="supp-icon">⚡</div>
       <div class="supp-name">Magnesium (Glycinate)</div>
-      <div class="supp-dose">300–400 mg / day</div>
-      <div class="supp-timing"><span>🌙 With Dinner</span> or <span>🛏 Before Bed</span> — take 1–2 hrs before sleep for relaxation</div>
-      <div class="supp-why">🫀 Reduces insulin resistance, supports muscle & nerve function, improves sleep</div>
+      <div class="supp-dose">300 to 400 mg / day</div>
+      <div class="supp-timing"><span>🌙 With Dinner</span> or <span>🛏 Before Bed</span></div>
+      <div class="supp-why">🫀 Reduces insulin resistance, supports sleep &amp; muscle function</div>
     </div>
     <div class="supp-card">
       <div class="supp-icon">🌿</div>
       <div class="supp-name">Milk Thistle</div>
-      <div class="supp-dose">140–200 mg Silymarin / day</div>
-      <div class="supp-timing"><span>☀️ With Lunch</span> — take with food to reduce stomach upset. Can split AM + PM.</div>
-      <div class="supp-why">🫀 Protects liver cells, reduces inflammation & oxidative stress</div>
+      <div class="supp-dose">140 to 200 mg Silymarin / day</div>
+      <div class="supp-timing"><span>☀️ With Lunch</span> — take with food</div>
+      <div class="supp-why">🫀 Protects liver cells, reduces inflammation &amp; oxidative stress</div>
     </div>
     <div class="supp-card">
       <div class="supp-icon">🔋</div>
       <div class="supp-name">Acetyl L-Carnitine</div>
-      <div class="supp-dose">500&#8209;1000 mg / day</div>
-      <div class="supp-timing"><span>🌅 Morning fasted</span> or <span>🏃 Pre-workout</span> — avoid late evening (stimulating)</div>
-      <div class="supp-why">🫀 Transports fatty acids into mitochondria — directly burns liver fat for energy</div>
+      <div class="supp-dose">500 to 1000 mg / day</div>
+      <div class="supp-timing"><span>🌅 Morning fasted</span> or <span>🏃 Pre-workout</span></div>
+      <div class="supp-why">🫀 Burns liver fat directly by transporting fatty acids into mitochondria</div>
     </div>
   </div>
 </div>
 
-<!-- DAILY TARGETS -->
+<!-- TARGETS -->
 
 <div class="targets-row">
   <div class="target-pill" style="background:linear-gradient(135deg,#f9ca24,#f0932b);color:#fff">🔥 1700 kcal</div>
@@ -310,1268 +255,1105 @@ animation:floatDeco 6s ease-in-out infinite;z-index:0;}
   <div class="target-pill" style="background:linear-gradient(135deg,#a29bfe,#6c5ce7);color:#fff">🌿 30g Fibre</div>
 </div>
 
-<div class="section-title"><span>📅</span> Weekly Meal Plan + Full Recipes <span>👨‍🍳</span></div>
+<div class="section-title">📅 Weekly Meal Plan + Full Recipes 👨‍🍳</div>
 
-<!-- DAY TABS -->
+<!-- TABS -->
 
 <div class="day-tabs">
-  <button class="day-tab active" onclick="showDay('mon',this)">🌱&nbsp;Monday</button>
-  <button class="day-tab" onclick="showDay('tue',this)">🌻&nbsp;Tuesday</button>
-  <button class="day-tab" onclick="showDay('wed',this)">🌊&nbsp;Wednesday</button>
-  <button class="day-tab" onclick="showDay('thu',this)">🔥&nbsp;Thursday</button>
-  <button class="day-tab" onclick="showDay('fri',this)">⚡&nbsp;Friday</button>
-  <button class="day-tab" onclick="showDay('sat',this)">🌈&nbsp;Saturday</button>
-  <button class="day-tab" onclick="showDay('sun',this)">☀️&nbsp;Sunday</button>
+  <button class="day-tab active" onclick="showDay('mon',this)">🌱 Monday</button>
+  <button class="day-tab" onclick="showDay('tue',this)">🌻 Tuesday</button>
+  <button class="day-tab" onclick="showDay('wed',this)">🌊 Wednesday</button>
+  <button class="day-tab" onclick="showDay('thu',this)">🔥 Thursday</button>
+  <button class="day-tab" onclick="showDay('fri',this)">⚡ Friday</button>
+  <button class="day-tab" onclick="showDay('sat',this)">🌈 Saturday</button>
+  <button class="day-tab" onclick="showDay('sun',this)">☀️ Sunday</button>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     MONDAY
-═══════════════════════════════════════════════════════════════ -->
+<!-- ══════════ MONDAY ══════════ -->
 
 <div id="day-mon" class="day-panel active">
   <div class="day-header">
     <div class="day-emoji">🌱</div>
     <div class="day-title">Monday — Fresh Start!</div>
-    <div class="day-macro-strip">
-      <div class="day-macro-chip" style="background:#fff3cd;color:#856404">🔥 1240 kcal</div>
-      <div class="day-macro-chip" style="background:#d4edda;color:#155724">💪 104g P</div>
-      <div class="day-macro-chip" style="background:#cce5ff;color:#004085">🌾 82g C</div>
-      <div class="day-macro-chip" style="background:#ffe5d0;color:#7a3419">🥑 44g F</div>
-      <div class="day-macro-chip" style="background:#e2d9f3;color:#432874">🌿 17g Fib</div>
+    <div class="day-chips">
+      <span class="dchip" style="background:#fff3cd;color:#856404">🔥 1240 kcal</span>
+      <span class="dchip" style="background:#d4edda;color:#155724">💪 104g P</span>
+      <span class="dchip" style="background:#cce5ff;color:#004085">🌾 82g C</span>
+      <span class="dchip" style="background:#ffe5d0;color:#7a3419">🥑 44g F</span>
     </div>
   </div>
   <div class="meals-grid">
-
-```
-<!-- MON BREAKFAST -->
-<div class="meal-card meal-bf">
-  <div class="meal-top-bar"></div>
-  <div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">🌅</span><span class="meal-type-label">Breakfast</span></div>
-    <div class="meal-name">Veggie Omelette + Avocado Toast + Orange</div>
-    <div class="food-emoji-strip">🥚🥚🥚🥬🍅🧅🥑🍞🍊</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 390 kcal</span><span class="macro-pill mp-prot">💪 24g protein</span>
-      <span class="macro-pill mp-carb">🌾 28g carbs</span><span class="macro-pill mp-fat">🥑 18g fat</span>
-      <span class="macro-pill mp-fib">🌿 7g fibre</span>
+    <!-- BF -->
+    <div class="meal-card meal-bf">
+      <div class="meal-top"></div>
+      <div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">🌅</span><span class="meal-label">Breakfast</span></div>
+        <div class="meal-name">Veggie Omelette + Avocado Toast + Orange</div>
+        <div class="food-emojis">🥚🥚🥚🥬🍅🥑🍞🍊</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 390 kcal</span><span class="mp mp-p">💪 24g protein</span>
+          <span class="mp mp-c">🌾 28g carbs</span><span class="mp mp-f">🥑 18g fat</span><span class="mp mp-fi">🌿 7g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Large eggs</td><td>3</td><td>whisked</td><td class="kc">210</td></tr>
+              <tr><td>Baby spinach</td><td>40g</td><td>washed</td><td class="kc">9</td></tr>
+              <tr><td>Cherry tomatoes</td><td>60g</td><td>halved</td><td class="kc">11</td></tr>
+              <tr><td>Onion</td><td>30g</td><td>diced</td><td class="kc">12</td></tr>
+              <tr><td>Avocado</td><td>75g</td><td>mashed</td><td class="kc">120</td></tr>
+              <tr><td>Whole-grain bread</td><td>1 slice 35g</td><td>toasted</td><td class="kc">85</td></tr>
+              <tr><td>Orange</td><td>1 medium 150g</td><td>peeled</td><td class="kc">62</td></tr>
+              <tr><td>Olive oil spray</td><td>1 spray</td><td>—</td><td class="kc">8</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>390</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Spray pan with oil. Sauté onion 2 min. Add tomatoes and spinach, stir 1 min.</li>
+              <li>Pour whisked eggs over veg. Season. Cook undisturbed 2 min until edges set.</li>
+              <li>Fold omelette, cook 1 more min. Slide onto plate.</li>
+              <li>Toast bread. Mash avocado with salt + lemon. Spread on toast.</li>
+              <li>Serve omelette, toast and orange together.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Take Vit D3 + Acetyl L-Carnitine with this meal. Avocado provides glutathione — a powerful liver antioxidant.</div></div>
+        </div>
+      </div>
     </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section">
-        <div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Large eggs</td><td>3 whole</td><td>whisked</td><td class="kcal-col">210</td></tr>
-          <tr><td>Baby spinach</td><td>40g (2 big handfuls)</td><td>washed</td><td class="kcal-col">9</td></tr>
-          <tr><td>Cherry tomatoes</td><td>60g (5–6 tomatoes)</td><td>halved</td><td class="kcal-col">11</td></tr>
-          <tr><td>Onion</td><td>30g (¼ small onion)</td><td>finely diced</td><td class="kcal-col">12</td></tr>
-          <tr><td>Avocado (ripe)</td><td>75g (½ medium avocado)</td><td>mashed</td><td class="kcal-col">120</td></tr>
-          <tr><td>Whole-grain bread</td><td>1 slice (35g)</td><td>toasted</td><td class="kcal-col">85</td></tr>
-          <tr><td>Orange</td><td>1 medium (150g)</td><td>peeled</td><td class="kcal-col">62</td></tr>
-          <tr><td>Olive oil spray</td><td>1 spray (≈2g)</td><td>—</td><td class="kcal-col">8</td></tr>
-          <tr><td>Salt, black pepper</td><td>pinch each</td><td>—</td><td class="kcal-col">0</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~390</strong></td></tr>
-        </table>
+    <!-- LUNCH -->
+    <div class="meal-card meal-lu">
+      <div class="meal-top"></div>
+      <div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">☀️</span><span class="meal-label">Lunch</span></div>
+        <div class="meal-name">Salmon &amp; Quinoa Bowl</div>
+        <div class="food-emojis">🐟🍚🥒🍅🌿🍋</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 480 kcal</span><span class="mp mp-p">💪 42g protein</span>
+          <span class="mp mp-c">🌾 32g carbs</span><span class="mp mp-f">🥑 16g fat</span><span class="mp mp-fi">🌿 4g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Salmon fillet</td><td>150g raw</td><td>patted dry</td><td class="kc">248</td></tr>
+              <tr><td>Quinoa dry</td><td>50g</td><td>rinsed</td><td class="kc">180</td></tr>
+              <tr><td>Cucumber</td><td>100g</td><td>diced</td><td class="kc">13</td></tr>
+              <tr><td>Cherry tomatoes</td><td>80g</td><td>halved</td><td class="kc">14</td></tr>
+              <tr><td>Lemon juice</td><td>1 tbsp</td><td>—</td><td class="kc">4</td></tr>
+              <tr><td>Extra virgin olive oil</td><td>1 tsp</td><td>dressing</td><td class="kc">40</td></tr>
+              <tr><td>Fresh dill</td><td>10g</td><td>chopped</td><td class="kc">4</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>480</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Cook quinoa: 50g + 120ml water. Boil, cover, simmer 13 min. Fluff and cool.</li>
+              <li>Season salmon. Bake at 200°C for 13 min, or pan-sear 4 min each side.</li>
+              <li>Whisk lemon juice + olive oil for dressing.</li>
+              <li>Bowl: quinoa base, cucumber, tomatoes, herbs. Salmon on top. Drizzle dressing.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Take Milk Thistle with this meal. Omega-3s from salmon are the #1 dietary intervention for fatty liver.</div></div>
+        </div>
       </div>
-      <div class="recipe-section">
-        <div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Spray a non-stick pan lightly with olive oil. Heat over medium. Add diced onion and cook 2 min until soft.</li>
-          <li>Add halved cherry tomatoes and spinach. Stir 1 min until spinach just wilts. Push to side of pan.</li>
-          <li>Pour whisked eggs over vegetables. Season with salt and pepper. Cook undisturbed 2 min until edges set.</li>
-          <li>Fold omelette in half. Cook 1 more min. Slide onto plate.</li>
-          <li>Toast bread. Mash avocado with a fork, season with salt and a squeeze of lemon if desired. Spread on toast.</li>
-          <li>Serve omelette + toast alongside peeled orange. Eat immediately.</li>
-        </ol>
+    </div>
+    <!-- DINNER -->
+    <div class="meal-card meal-di">
+      <div class="meal-top"></div>
+      <div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">🌙</span><span class="meal-label">Dinner</span></div>
+        <div class="meal-name">Shrimp Stir-Fry on Cauliflower Rice</div>
+        <div class="food-emojis">🍤🥦🫑🫛🧄🌶️</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 370 kcal</span><span class="mp mp-p">💪 38g protein</span>
+          <span class="mp mp-c">🌾 22g carbs</span><span class="mp mp-f">🥑 10g fat</span><span class="mp mp-fi">🌿 6g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Raw shrimp peeled</td><td>180g</td><td>thawed</td><td class="kc">152</td></tr>
+              <tr><td>Cauliflower</td><td>200g</td><td>grated to rice</td><td class="kc">50</td></tr>
+              <tr><td>Broccoli florets</td><td>100g</td><td>bite-sized</td><td class="kc">34</td></tr>
+              <tr><td>Red bell pepper</td><td>80g</td><td>sliced</td><td class="kc">25</td></tr>
+              <tr><td>Snap peas</td><td>60g</td><td>trimmed</td><td class="kc">25</td></tr>
+              <tr><td>Garlic + ginger</td><td>2 cloves + 1 tsp</td><td>minced</td><td class="kc">11</td></tr>
+              <tr><td>Low-sodium soy sauce</td><td>1 tbsp</td><td>—</td><td class="kc">10</td></tr>
+              <tr><td>Sesame oil</td><td>1 tsp</td><td>finishing</td><td class="kc">40</td></tr>
+              <tr><td>Olive oil</td><td>1 tsp</td><td>cooking</td><td class="kc">40</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>370</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Grate cauliflower into rice-sized pieces. Set aside.</li>
+              <li>Heat olive oil in wok on high. Add garlic + ginger 30 sec.</li>
+              <li>Add broccoli and pepper, stir-fry 3-4 min. Add snap peas and shrimp, cook 2-3 min.</li>
+              <li>Push aside. Add cauliflower rice, stir-fry 2 min. Combine all with soy sauce.</li>
+              <li>Drizzle sesame oil. Serve immediately.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Take Magnesium after dinner. Cauliflower rice has 75% fewer carbs than white rice.</div></div>
+        </div>
       </div>
-      <div class="recipe-section">
-        <div class="tip-box">💡 <strong>Liver Tip:</strong> Eggs provide choline which is essential for liver fat transport. Avocado provides glutathione — a powerful liver antioxidant. Take your <strong>Vit D3 + Acetyl L-Carnitine</strong> now with this meal.</div>
+    </div>
+  </div>
+  <div class="supp-sched">
+    <h3>💊 Monday Supplements</h3>
+    <div class="sched-row">
+      <div class="sched-block"><div class="sched-time">🌅 Breakfast</div>
+        <div class="sched-item">☀️ Vitamin D3 — 2000 to 5000 IU</div>
+        <div class="sched-item">🔋 Acetyl L-Carnitine — 500mg</div>
       </div>
+      <div class="sched-block"><div class="sched-time">☀️ Lunch</div>
+        <div class="sched-item">🌿 Milk Thistle — 140 to 200mg</div>
+      </div>
+      <div class="sched-block"><div class="sched-time">🌙 Dinner / Bed</div>
+        <div class="sched-item">⚡ Magnesium Glycinate — 300 to 400mg</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-total">
+    <span class="dt-label">📊 Monday Total</span>
+    <div class="dt-macros">
+      <span class="dtm">🔥 1240 kcal</span><span class="dtm">💪 104g P</span>
+      <span class="dtm">🌾 82g C</span><span class="dtm">🥑 44g F</span><span class="dtm">🌿 17g Fibre</span>
     </div>
   </div>
 </div>
 
-<!-- MON LUNCH -->
-<div class="meal-card meal-lu">
-  <div class="meal-top-bar"></div>
-  <div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">☀️</span><span class="meal-type-label">Lunch</span></div>
-    <div class="meal-name">Salmon & Quinoa Bowl</div>
-    <div class="food-emoji-strip">🐟🍚🥒🍅🌿🍋</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 480 kcal</span><span class="macro-pill mp-prot">💪 42g protein</span>
-      <span class="macro-pill mp-carb">🌾 32g carbs</span><span class="macro-pill mp-fat">🥑 16g fat</span>
-      <span class="macro-pill mp-fib">🌿 4g fibre</span>
-    </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section">
-        <div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Salmon fillet (skin-on)</td><td>150g raw</td><td>patted dry</td><td class="kcal-col">248</td></tr>
-          <tr><td>Quinoa (dry)</td><td>50g (⅓ cup dry = ½ cup cooked)</td><td>rinsed well</td><td class="kcal-col">180</td></tr>
-          <tr><td>Cucumber</td><td>100g (½ medium)</td><td>diced</td><td class="kcal-col">13</td></tr>
-          <tr><td>Cherry tomatoes</td><td>80g (6–7 tomatoes)</td><td>halved</td><td class="kcal-col">14</td></tr>
-          <tr><td>Fresh lemon juice</td><td>1 tbsp (15ml)</td><td>—</td><td class="kcal-col">4</td></tr>
-          <tr><td>Extra virgin olive oil</td><td>1 tsp (5ml)</td><td>for dressing</td><td class="kcal-col">40</td></tr>
-          <tr><td>Fresh dill or parsley</td><td>10g (small bunch)</td><td>chopped</td><td class="kcal-col">4</td></tr>
-          <tr><td>Garlic powder</td><td>¼ tsp</td><td>—</td><td class="kcal-col">2</td></tr>
-          <tr><td>Salt, black pepper</td><td>pinch each</td><td>—</td><td class="kcal-col">0</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~480</strong></td></tr>
-        </table>
-      </div>
-      <div class="recipe-section">
-        <div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Cook quinoa: add 50g dry quinoa to 120ml cold water. Bring to boil, reduce heat, cover and simmer 12–14 min until water absorbed. Fluff with fork. Cool slightly.</li>
-          <li>Season salmon with garlic powder, salt and pepper. Heat oven to 200°C / 400°F.</li>
-          <li>Place salmon on foil-lined tray. Bake 12–14 min until flakes easily with a fork. (Or pan-sear 4 min each side.)</li>
-          <li>Whisk together lemon juice and olive oil for dressing. Season with pinch of salt.</li>
-          <li>Assemble bowl: quinoa base, cucumber, cherry tomatoes, fresh herbs. Lay salmon on top.</li>
-          <li>Drizzle dressing over bowl. Serve immediately. Take <strong>Milk Thistle</strong> with this meal.</li>
-        </ol>
-      </div>
-      <div class="recipe-section">
-        <div class="tip-box">💡 <strong>Tip:</strong> Salmon's omega-3s (EPA & DHA) are the #1 dietary intervention for fatty liver. Aim for 150g+ of oily fish at least 3× this week.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MON DINNER -->
-<div class="meal-card meal-di">
-  <div class="meal-top-bar"></div>
-  <div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">🌙</span><span class="meal-type-label">Dinner</span></div>
-    <div class="meal-name">Shrimp Stir-Fry on Cauliflower Rice</div>
-    <div class="food-emoji-strip">🍤🥦🫑🫛🧄🌶️</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 370 kcal</span><span class="macro-pill mp-prot">💪 38g protein</span>
-      <span class="macro-pill mp-carb">🌾 22g carbs</span><span class="macro-pill mp-fat">🥑 10g fat</span>
-      <span class="macro-pill mp-fib">🌿 6g fibre</span>
-    </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section">
-        <div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Raw shrimp (peeled, deveined)</td><td>180g</td><td>thawed if frozen</td><td class="kcal-col">152</td></tr>
-          <tr><td>Cauliflower</td><td>200g (½ small head)</td><td>grated to rice</td><td class="kcal-col">50</td></tr>
-          <tr><td>Broccoli florets</td><td>100g</td><td>bite-sized pieces</td><td class="kcal-col">34</td></tr>
-          <tr><td>Red bell pepper</td><td>80g (½ pepper)</td><td>sliced</td><td class="kcal-col">25</td></tr>
-          <tr><td>Snap peas</td><td>60g</td><td>trimmed</td><td class="kcal-col">25</td></tr>
-          <tr><td>Fresh ginger</td><td>1 tsp grated (5g)</td><td>—</td><td class="kcal-col">2</td></tr>
-          <tr><td>Garlic cloves</td><td>2 cloves (6g)</td><td>minced</td><td class="kcal-col">9</td></tr>
-          <tr><td>Low-sodium soy sauce</td><td>1 tbsp (15ml)</td><td>—</td><td class="kcal-col">10</td></tr>
-          <tr><td>Sesame oil</td><td>1 tsp (5ml)</td><td>finishing only</td><td class="kcal-col">40</td></tr>
-          <tr><td>Olive oil</td><td>1 tsp (5ml)</td><td>for cooking</td><td class="kcal-col">40</td></tr>
-          <tr><td>Chilli flakes (optional)</td><td>pinch</td><td>—</td><td class="kcal-col">2</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~370</strong></td></tr>
-        </table>
-      </div>
-      <div class="recipe-section">
-        <div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Grate cauliflower using a box grater or food processor to create "rice." Set aside.</li>
-          <li>Heat olive oil in a large wok or non-stick pan over high heat. Add garlic and ginger. Stir-fry 30 seconds.</li>
-          <li>Add broccoli and bell pepper. Stir-fry 3–4 min until just tender-crisp.</li>
-          <li>Add snap peas and shrimp. Cook 2–3 min, tossing constantly, until shrimp turn pink and are cooked through.</li>
-          <li>Push everything to the side. Add cauliflower rice to pan. Stir-fry 2 min until slightly golden.</li>
-          <li>Add soy sauce, combine everything. Drizzle sesame oil on top. Serve immediately. Take <strong>Magnesium</strong> with or after this meal.</li>
-        </ol>
-      </div>
-      <div class="recipe-section">
-        <div class="tip-box">💡 <strong>Tip:</strong> Cauliflower rice has 75% fewer carbs than white rice. Ginger & garlic both have proven anti-inflammatory effects on the liver.</div>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-  </div>
-  <div class="supp-schedule">
-    <h3>💊 Monday Supplement Schedule</h3>
-    <div class="supp-time-row">
-      <div class="supp-time-block"><div class="time-label">🌅 Breakfast</div>
-        <div class="supp-item">☀️ Vitamin D3 — 2000–5000 IU</div>
-        <div class="supp-item">🔋 Acetyl L-Carnitine — 500mg (fasted or with meal)</div>
-      </div>
-      <div class="supp-time-block"><div class="time-label">☀️ Lunch</div>
-        <div class="supp-item">🌿 Milk Thistle — 140–200mg Silymarin</div>
-      </div>
-      <div class="supp-time-block"><div class="time-label">🌙 Dinner / Bedtime</div>
-        <div class="supp-item">⚡ Magnesium Glycinate — 300–400mg</div>
-      </div>
-    </div>
-  </div>
-  <div class="day-total-bar">
-    <span class="day-total-label">📊 Monday Total</span>
-    <div class="day-total-macros">
-      <span class="dtm">🔥 1240 kcal</span><span class="dtm">💪 104g Protein</span>
-      <span class="dtm">🌾 82g Carbs</span><span class="dtm">🥑 44g Fat</span><span class="dtm">🌿 17g Fibre</span>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     TUESDAY
-═══════════════════════════════════════════════════════════════ -->
+<!-- ══════════ TUESDAY ══════════ -->
 
 <div id="day-tue" class="day-panel">
   <div class="day-header">
     <div class="day-emoji">🌻</div>
     <div class="day-title">Tuesday — Plant Power!</div>
-    <div class="day-macro-strip">
-      <div class="day-macro-chip" style="background:#fff3cd;color:#856404">🔥 1210 kcal</div>
-      <div class="day-macro-chip" style="background:#d4edda;color:#155724">💪 90g P</div>
-      <div class="day-macro-chip" style="background:#cce5ff;color:#004085">🌾 92g C</div>
-      <div class="day-macro-chip" style="background:#ffe5d0;color:#7a3419">🥑 38g F</div>
-      <div class="day-macro-chip" style="background:#e2d9f3;color:#432874">🌿 22g Fib</div>
+    <div class="day-chips">
+      <span class="dchip" style="background:#fff3cd;color:#856404">🔥 1210 kcal</span>
+      <span class="dchip" style="background:#d4edda;color:#155724">💪 90g P</span>
+      <span class="dchip" style="background:#cce5ff;color:#004085">🌾 92g C</span>
+      <span class="dchip" style="background:#ffe5d0;color:#7a3419">🥑 38g F</span>
     </div>
   </div>
   <div class="meals-grid">
-
-```
-<div class="meal-card meal-bf">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">🌅</span><span class="meal-type-label">Breakfast</span></div>
-    <div class="meal-name">Golden Tofu Scramble + Mixed Berries</div>
-    <div class="food-emoji-strip">🧈🟡🥬🫐🍓🍵</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 320 kcal</span><span class="macro-pill mp-prot">💪 22g protein</span>
-      <span class="macro-pill mp-carb">🌾 20g carbs</span><span class="macro-pill mp-fat">🥑 12g fat</span>
-      <span class="macro-pill mp-fib">🌿 5g fibre</span>
+    <div class="meal-card meal-bf">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">🌅</span><span class="meal-label">Breakfast</span></div>
+        <div class="meal-name">Golden Tofu Scramble + Mixed Berries</div>
+        <div class="food-emojis">🧈🟡🥬🫐🍓</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 320 kcal</span><span class="mp mp-p">💪 22g protein</span>
+          <span class="mp mp-c">🌾 20g carbs</span><span class="mp mp-f">🥑 12g fat</span><span class="mp mp-fi">🌿 5g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Firm tofu</td><td>200g</td><td>pressed 10 min, crumbled</td><td class="kc">144</td></tr>
+              <tr><td>Baby spinach</td><td>50g</td><td>washed</td><td class="kc">11</td></tr>
+              <tr><td>Turmeric powder</td><td>1/2 tsp</td><td>—</td><td class="kc">4</td></tr>
+              <tr><td>Garlic powder</td><td>1/4 tsp</td><td>—</td><td class="kc">2</td></tr>
+              <tr><td>Olive oil</td><td>1 tsp</td><td>—</td><td class="kc">40</td></tr>
+              <tr><td>Nutritional yeast</td><td>1 tbsp 8g</td><td>optional</td><td class="kc">30</td></tr>
+              <tr><td>Mixed berries</td><td>150g</td><td>fresh or thawed</td><td class="kc">52</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>320</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Press tofu 10 min between two plates. Crumble into scrambled-egg-sized pieces.</li>
+              <li>Heat olive oil over medium-high. Cook tofu 3-4 min until edges are golden.</li>
+              <li>Add turmeric and garlic powder — tofu turns golden yellow. Stir to coat.</li>
+              <li>Add spinach, stir 1-2 min until wilted. Season with salt and pepper.</li>
+              <li>Serve with berries on the side.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Take Vit D3 + Acetyl L-Carnitine. Turmeric's curcumin is one of the most studied compounds for reducing liver inflammation.</div></div>
+        </div>
+      </div>
     </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Firm tofu</td><td>200g</td><td>drained, pressed 10 min, crumbled</td><td class="kcal-col">144</td></tr>
-          <tr><td>Baby spinach</td><td>50g</td><td>washed</td><td class="kcal-col">11</td></tr>
-          <tr><td>Turmeric powder</td><td>½ tsp</td><td>—</td><td class="kcal-col">4</td></tr>
-          <tr><td>Garlic powder</td><td>¼ tsp</td><td>—</td><td class="kcal-col">2</td></tr>
-          <tr><td>Olive oil</td><td>1 tsp (5ml)</td><td>—</td><td class="kcal-col">40</td></tr>
-          <tr><td>Nutritional yeast (optional)</td><td>1 tbsp (8g)</td><td>—</td><td class="kcal-col">30</td></tr>
-          <tr><td>Mixed berries (fresh or frozen)</td><td>150g (1 cup)</td><td>thawed if frozen</td><td class="kcal-col">52</td></tr>
-          <tr><td>Salt, black pepper</td><td>pinch each</td><td>—</td><td class="kcal-col">0</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~320</strong></td></tr>
-        </table>
+    <div class="meal-card meal-lu">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">☀️</span><span class="meal-label">Lunch</span></div>
+        <div class="meal-name">White Chickpea &amp; Veggie Salad + Boiled Egg</div>
+        <div class="food-emojis">🫘🥒🍅🌿🥚🍋</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 460 kcal</span><span class="mp mp-p">💪 24g protein</span>
+          <span class="mp mp-c">🌾 48g carbs</span><span class="mp mp-f">🥑 14g fat</span><span class="mp mp-fi">🌿 12g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Canned white chickpeas</td><td>160g drained</td><td>rinsed well</td><td class="kc">210</td></tr>
+              <tr><td>Large egg</td><td>1</td><td>hard-boiled</td><td class="kc">70</td></tr>
+              <tr><td>Cucumber</td><td>100g</td><td>diced</td><td class="kc">13</td></tr>
+              <tr><td>Cherry tomatoes</td><td>80g</td><td>halved</td><td class="kc">14</td></tr>
+              <tr><td>Flat-leaf parsley</td><td>20g</td><td>chopped</td><td class="kc">7</td></tr>
+              <tr><td>Red onion</td><td>25g</td><td>finely sliced</td><td class="kc">10</td></tr>
+              <tr><td>Extra virgin olive oil</td><td>1.5 tsp</td><td>dressing</td><td class="kc">63</td></tr>
+              <tr><td>Lemon juice</td><td>1.5 tbsp</td><td>—</td><td class="kc">5</td></tr>
+              <tr><td>Cumin powder</td><td>1/4 tsp</td><td>—</td><td class="kc">2</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>460</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Hard-boil egg: cold water, bring to boil, cook 9 min, cool under cold water, peel and quarter.</li>
+              <li>Rinse and pat-dry chickpeas.</li>
+              <li>Whisk olive oil, lemon juice, cumin, salt and pepper.</li>
+              <li>Combine chickpeas, cucumber, tomatoes, onion, parsley. Toss with dressing.</li>
+              <li>Top with quartered egg. Let sit 5 min before eating.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Take Milk Thistle. Chickpeas' resistant starch feeds beneficial gut bacteria and reduces liver fat over time.</div></div>
+        </div>
       </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Press tofu between two plates with a heavy book on top for 10 min. This removes excess water for a better texture.</li>
-          <li>Crumble pressed tofu into rough chunks — aim for scrambled egg-sized pieces.</li>
-          <li>Heat olive oil in a non-stick pan over medium-high. Add tofu crumbles. Cook 3–4 min until golden on edges.</li>
-          <li>Add turmeric and garlic powder. Stir to coat tofu evenly — it will turn golden yellow.</li>
-          <li>Add spinach. Stir 1–2 min until wilted. Season with salt and pepper. Add nutritional yeast if using.</li>
-          <li>Serve with berries on the side. Take <strong>Vit D3 + Acetyl L-Carnitine</strong> with this meal.</li>
-        </ol>
+    </div>
+    <div class="meal-card meal-di">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">🌙</span><span class="meal-label">Dinner</span></div>
+        <div class="meal-name">Pan-Seared Fish Fillet + Roasted Veg + Potato</div>
+        <div class="food-emojis">🐟🌿🫑🍅🥔</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 430 kcal</span><span class="mp mp-p">💪 44g protein</span>
+          <span class="mp mp-c">🌾 24g carbs</span><span class="mp mp-f">🥑 12g fat</span><span class="mp mp-fi">🌿 5g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Fish fillet cod or tilapia</td><td>200g raw</td><td>patted very dry</td><td class="kc">188</td></tr>
+              <tr><td>Baby potatoes</td><td>100g</td><td>halved</td><td class="kc">77</td></tr>
+              <tr><td>Asparagus</td><td>100g</td><td>woody ends snapped</td><td class="kc">22</td></tr>
+              <tr><td>Cherry tomatoes</td><td>80g</td><td>whole</td><td class="kc">14</td></tr>
+              <tr><td>Olive oil total</td><td>2 tsp</td><td>split uses</td><td class="kc">80</td></tr>
+              <tr><td>Garlic</td><td>2 cloves</td><td>minced</td><td class="kc">9</td></tr>
+              <tr><td>Lemon</td><td>1/2</td><td>zest + juice</td><td class="kc">8</td></tr>
+              <tr><td>Smoked paprika</td><td>1/2 tsp</td><td>—</td><td class="kc">3</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>430</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Preheat oven 200°C. Toss potatoes in 1 tsp oil, roast 20 min.</li>
+              <li>Add asparagus and tomatoes with garlic. Return to oven 10 more min.</li>
+              <li>Season fish with paprika, lemon zest, salt and pepper. Pat VERY dry.</li>
+              <li>Heat 1 tsp oil in pan on HIGH until smoking. Place fish skin-down. Press 30 sec. Cook 3-4 min. Flip, cook 2 min more.</li>
+              <li>Squeeze lemon over fish. Serve with roasted veg.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Take Magnesium after dinner. Patting the fish very dry is the secret to a golden crust — moisture is the enemy of a good sear.</div></div>
+        </div>
       </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> Turmeric contains curcumin — one of the most studied compounds for reducing liver inflammation and fat. Use generously!</div></div>
+    </div>
+  </div>
+  <div class="supp-sched">
+    <h3>💊 Tuesday Supplements</h3>
+    <div class="sched-row">
+      <div class="sched-block"><div class="sched-time">🌅 Breakfast</div>
+        <div class="sched-item">☀️ Vitamin D3 — 2000 to 5000 IU</div>
+        <div class="sched-item">🔋 Acetyl L-Carnitine — 500mg</div>
+      </div>
+      <div class="sched-block"><div class="sched-time">☀️ Lunch</div>
+        <div class="sched-item">🌿 Milk Thistle — 140 to 200mg</div>
+      </div>
+      <div class="sched-block"><div class="sched-time">🌙 Dinner / Bed</div>
+        <div class="sched-item">⚡ Magnesium — 300 to 400mg</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-total">
+    <span class="dt-label">📊 Tuesday Total</span>
+    <div class="dt-macros">
+      <span class="dtm">🔥 1210 kcal</span><span class="dtm">💪 90g P</span>
+      <span class="dtm">🌾 92g C</span><span class="dtm">🥑 38g F</span><span class="dtm">🌿 22g Fibre</span>
     </div>
   </div>
 </div>
 
-<div class="meal-card meal-lu">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">☀️</span><span class="meal-type-label">Lunch</span></div>
-    <div class="meal-name">White Chickpea & Veggie Salad + Boiled Egg</div>
-    <div class="food-emoji-strip">🫘🥒🍅🌿🥚🍋</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 460 kcal</span><span class="macro-pill mp-prot">💪 24g protein</span>
-      <span class="macro-pill mp-carb">🌾 48g carbs</span><span class="macro-pill mp-fat">🥑 14g fat</span>
-      <span class="macro-pill mp-fib">🌿 12g fibre</span>
-    </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Canned white chickpeas</td><td>160g drained (⅔ cup)</td><td>rinsed thoroughly</td><td class="kcal-col">210</td></tr>
-          <tr><td>Large egg</td><td>1 whole</td><td>hard-boiled</td><td class="kcal-col">70</td></tr>
-          <tr><td>Cucumber</td><td>100g</td><td>diced</td><td class="kcal-col">13</td></tr>
-          <tr><td>Cherry tomatoes</td><td>80g</td><td>halved</td><td class="kcal-col">14</td></tr>
-          <tr><td>Fresh flat-leaf parsley</td><td>20g</td><td>roughly chopped</td><td class="kcal-col">7</td></tr>
-          <tr><td>Red onion</td><td>25g</td><td>finely sliced</td><td class="kcal-col">10</td></tr>
-          <tr><td>Extra virgin olive oil</td><td>1½ tsp (7ml)</td><td>for dressing</td><td class="kcal-col">63</td></tr>
-          <tr><td>Lemon juice</td><td>1½ tbsp (22ml)</td><td>freshly squeezed</td><td class="kcal-col">5</td></tr>
-          <tr><td>Cumin powder</td><td>¼ tsp</td><td>—</td><td class="kcal-col">2</td></tr>
-          <tr><td>Salt, black pepper</td><td>pinch each</td><td>—</td><td class="kcal-col">0</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~460</strong></td></tr>
-        </table>
-      </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Hard-boil egg: place in cold water, bring to boil, cook 9 min, cool under cold running water, peel and quarter.</li>
-          <li>Rinse drained chickpeas well under cold water. Pat dry with paper towel — this prevents a watery salad.</li>
-          <li>Whisk together olive oil, lemon juice, cumin, salt and pepper to make dressing.</li>
-          <li>Combine chickpeas, cucumber, cherry tomatoes, red onion and parsley in a bowl.</li>
-          <li>Pour dressing over salad and toss well. Let sit 5 min so chickpeas absorb flavour.</li>
-          <li>Top with quartered egg. Serve and take <strong>Milk Thistle</strong> with this meal.</li>
-        </ol>
-      </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> Chickpeas are rich in resistant starch which feeds beneficial gut bacteria and reduces liver fat over time. Rinse canned chickpeas to reduce sodium by ~40%.</div></div>
-    </div>
-  </div>
-</div>
-
-<div class="meal-card meal-di">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">🌙</span><span class="meal-type-label">Dinner</span></div>
-    <div class="meal-name">Pan-Seared Fish Fillet + Roasted Veg + Potato</div>
-    <div class="food-emoji-strip">🐟🌿🫑🍅🥔</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 430 kcal</span><span class="macro-pill mp-prot">💪 44g protein</span>
-      <span class="macro-pill mp-carb">🌾 24g carbs</span><span class="macro-pill mp-fat">🥑 12g fat</span>
-      <span class="macro-pill mp-fib">🌿 5g fibre</span>
-    </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Fish fillet (Costco/MB cod or tilapia)</td><td>200g raw</td><td>patted very dry</td><td class="kcal-col">188</td></tr>
-          <tr><td>Baby potatoes</td><td>100g (4–5 small)</td><td>halved</td><td class="kcal-col">77</td></tr>
-          <tr><td>Asparagus spears</td><td>100g (6–8 spears)</td><td>woody ends snapped off</td><td class="kcal-col">22</td></tr>
-          <tr><td>Cherry tomatoes</td><td>80g</td><td>whole</td><td class="kcal-col">14</td></tr>
-          <tr><td>Olive oil</td><td>2 tsp total (10ml)</td><td>split: 1 tsp veg, 1 tsp fish</td><td class="kcal-col">80</td></tr>
-          <tr><td>Garlic cloves</td><td>2 (6g)</td><td>minced</td><td class="kcal-col">9</td></tr>
-          <tr><td>Fresh lemon</td><td>½ lemon</td><td>zest + juice</td><td class="kcal-col">8</td></tr>
-          <tr><td>Smoked paprika</td><td>½ tsp</td><td>—</td><td class="kcal-col">3</td></tr>
-          <tr><td>Salt, black pepper</td><td>pinch each</td><td>—</td><td class="kcal-col">0</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~430</strong></td></tr>
-        </table>
-      </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Preheat oven to 200°C/400°F. Toss potato halves in 1 tsp olive oil, season. Roast 20 min.</li>
-          <li>After 20 min, add asparagus and cherry tomatoes to the tray. Toss with garlic. Return to oven 10 more min.</li>
-          <li>Season fish with smoked paprika, lemon zest, salt and pepper. Pat VERY dry — crucial for a good sear.</li>
-          <li>Heat 1 tsp olive oil in non-stick pan over HIGH heat until almost smoking. Place fish skin-side down.</li>
-          <li>Press fish gently for first 30 seconds to prevent curling. Cook 3–4 min without touching. Flip carefully. Cook 2 more min.</li>
-          <li>Squeeze lemon juice over fish. Serve immediately with roasted vegetables and potatoes. Take <strong>Magnesium</strong> with this meal.</li>
-        </ol>
-      </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> Patting the fish very dry is the secret to a golden crust. The potato provides resistant starch when cooled — refrigerate leftovers and eat cold for gut benefits!</div></div>
-    </div>
-  </div>
-</div>
-```
-
-  </div>
-  <div class="supp-schedule">
-    <h3>💊 Tuesday Supplement Schedule</h3>
-    <div class="supp-time-row">
-      <div class="supp-time-block"><div class="time-label">🌅 Breakfast</div>
-        <div class="supp-item">☀️ Vitamin D3 — 2000–5000 IU</div>
-        <div class="supp-item">🔋 Acetyl L-Carnitine — 500mg</div>
-      </div>
-      <div class="supp-time-block"><div class="time-label">☀️ Lunch</div>
-        <div class="supp-item">🌿 Milk Thistle — 140–200mg Silymarin</div>
-      </div>
-      <div class="supp-time-block"><div class="time-label">🌙 Dinner / Bedtime</div>
-        <div class="supp-item">⚡ Magnesium Glycinate — 300–400mg</div>
-      </div>
-    </div>
-  </div>
-  <div class="day-total-bar">
-    <span class="day-total-label">📊 Tuesday Total</span>
-    <div class="day-total-macros">
-      <span class="dtm">🔥 1210 kcal</span><span class="dtm">💪 90g Protein</span>
-      <span class="dtm">🌾 92g Carbs</span><span class="dtm">🥑 38g Fat</span><span class="dtm">🌿 22g Fibre</span>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     WEDNESDAY
-═══════════════════════════════════════════════════════════════ -->
+<!-- ══════════ WEDNESDAY ══════════ -->
 
 <div id="day-wed" class="day-panel">
   <div class="day-header">
     <div class="day-emoji">🌊</div>
     <div class="day-title">Wednesday — Seafood Day!</div>
-    <div class="day-macro-strip">
-      <div class="day-macro-chip" style="background:#fff3cd;color:#856404">🔥 1240 kcal</div>
-      <div class="day-macro-chip" style="background:#d4edda;color:#155724">💪 88g P</div>
-      <div class="day-macro-chip" style="background:#cce5ff;color:#004085">🌾 72g C</div>
-      <div class="day-macro-chip" style="background:#ffe5d0;color:#7a3419">🥑 57g F</div>
-      <div class="day-macro-chip" style="background:#e2d9f3;color:#432874">🌿 14g Fib</div>
+    <div class="day-chips">
+      <span class="dchip" style="background:#fff3cd;color:#856404">🔥 1240 kcal</span>
+      <span class="dchip" style="background:#d4edda;color:#155724">💪 88g P</span>
+      <span class="dchip" style="background:#cce5ff;color:#004085">🌾 72g C</span>
+      <span class="dchip" style="background:#ffe5d0;color:#7a3419">🥑 57g F</span>
     </div>
   </div>
   <div class="meals-grid">
-
-```
-<div class="meal-card meal-bf">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">🌅</span><span class="meal-type-label">Breakfast</span></div>
-    <div class="meal-name">Poached Eggs + Mushroom Spinach Sauté + Rye Toast</div>
-    <div class="food-emoji-strip">🥚🥚🍄🥬🍊🍞</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 350 kcal</span><span class="macro-pill mp-prot">💪 20g protein</span>
-      <span class="macro-pill mp-carb">🌾 30g carbs</span><span class="macro-pill mp-fat">🥑 13g fat</span>
-      <span class="macro-pill mp-fib">🌿 6g fibre</span>
+    <div class="meal-card meal-bf">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">🌅</span><span class="meal-label">Breakfast</span></div>
+        <div class="meal-name">Poached Eggs + Mushroom Spinach Sauté + Rye Toast</div>
+        <div class="food-emojis">🥚🥚🍄🥬🍞🍊</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 350 kcal</span><span class="mp mp-p">💪 20g protein</span>
+          <span class="mp mp-c">🌾 30g carbs</span><span class="mp mp-f">🥑 13g fat</span><span class="mp mp-fi">🌿 6g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Large eggs</td><td>2</td><td>room temperature</td><td class="kc">140</td></tr>
+              <tr><td>Brown mushrooms</td><td>120g</td><td>sliced</td><td class="kc">26</td></tr>
+              <tr><td>Baby spinach</td><td>60g</td><td>washed</td><td class="kc">14</td></tr>
+              <tr><td>Rye bread</td><td>1 slice 35g</td><td>toasted</td><td class="kc">83</td></tr>
+              <tr><td>Grapefruit</td><td>1/2 medium</td><td>segmented</td><td class="kc">39</td></tr>
+              <tr><td>Olive oil</td><td>1 tsp</td><td>—</td><td class="kc">40</td></tr>
+              <tr><td>Garlic</td><td>1 small clove</td><td>minced</td><td class="kc">4</td></tr>
+              <tr><td>White vinegar</td><td>1 tbsp</td><td>for poaching</td><td class="kc">2</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>350</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Heat olive oil on medium-high. Add mushrooms in single layer — do NOT stir for 2 min so they brown.</li>
+              <li>Add garlic and spinach. Stir until wilted (1 min). Season. Keep warm.</li>
+              <li>Toast rye bread. Bring 8cm water to gentle simmer. Add vinegar.</li>
+              <li>Crack each egg into a cup. Create a gentle whirlpool. Slide egg in. Cook 3 min for soft yolk.</li>
+              <li>Remove eggs with slotted spoon, pat dry. Plate on toast with mushroom mix and grapefruit.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Take Vit D3 + Acetyl L-Carnitine. Do not wash mushrooms — wipe with a damp cloth so they sear, not steam.</div></div>
+        </div>
+      </div>
     </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Large eggs</td><td>2 whole</td><td>at room temperature</td><td class="kcal-col">140</td></tr>
-          <tr><td>Brown/cremini mushrooms</td><td>120g (1 cup sliced)</td><td>sliced</td><td class="kcal-col">26</td></tr>
-          <tr><td>Baby spinach</td><td>60g</td><td>washed</td><td class="kcal-col">14</td></tr>
-          <tr><td>Rye bread</td><td>1 slice (35g)</td><td>toasted</td><td class="kcal-col">83</td></tr>
-          <tr><td>Grapefruit</td><td>½ medium (120g flesh)</td><td>segmented</td><td class="kcal-col">39</td></tr>
-          <tr><td>Olive oil</td><td>1 tsp (5ml)</td><td>—</td><td class="kcal-col">40</td></tr>
-          <tr><td>Garlic clove</td><td>1 small (3g)</td><td>minced</td><td class="kcal-col">4</td></tr>
-          <tr><td>White vinegar</td><td>1 tbsp (for poaching)</td><td>—</td><td class="kcal-col">2</td></tr>
-          <tr><td>Fresh thyme (optional)</td><td>1 sprig</td><td>leaves stripped</td><td class="kcal-col">1</td></tr>
-          <tr><td>Salt, black pepper</td><td>pinch each</td><td>—</td><td class="kcal-col">0</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~350</strong></td></tr>
-        </table>
+    <div class="meal-card meal-lu">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">☀️</span><span class="meal-label">Lunch</span></div>
+        <div class="meal-name">Paneer Tikka Salad with Mint Yogurt Dressing</div>
+        <div class="food-emojis">🧀🥗🥒🌿🫙🍋</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 440 kcal</span><span class="mp mp-p">💪 28g protein</span>
+          <span class="mp mp-c">🌾 22g carbs</span><span class="mp mp-f">🥑 26g fat</span><span class="mp mp-fi">🌿 4g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Paneer</td><td>120g</td><td>2cm cubes</td><td class="kc">300</td></tr>
+              <tr><td>Mixed salad greens</td><td>80g</td><td>washed</td><td class="kc">16</td></tr>
+              <tr><td>Cucumber</td><td>80g</td><td>diced</td><td class="kc">11</td></tr>
+              <tr><td>Low-fat yogurt</td><td>60g</td><td>for dressing</td><td class="kc">36</td></tr>
+              <tr><td>Fresh mint</td><td>10g</td><td>chopped</td><td class="kc">4</td></tr>
+              <tr><td>Lemon juice</td><td>1 tbsp</td><td>—</td><td class="kc">4</td></tr>
+              <tr><td>Cumin + paprika + turmeric</td><td>1/2 + 1/4 + 1/4 tsp</td><td>marinade</td><td class="kc">8</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>440</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Mix 2 tbsp yogurt with spices and salt. Toss paneer in marinade. Rest 15 min minimum.</li>
+              <li>Grill paneer on high-heat pan 2-3 min per side until charred marks appear.</li>
+              <li>Make dressing: whisk remaining yogurt with mint, lemon juice and pinch of salt.</li>
+              <li>Plate greens and cucumber. Top with grilled paneer. Drizzle dressing.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Take Milk Thistle. Turmeric + cumin are both anti-inflammatory for the liver. Marinate overnight for deeper flavour.</div></div>
+        </div>
       </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Heat olive oil in a pan over medium-high. Add mushrooms in a single layer — do NOT stir for 2 min so they brown.</li>
-          <li>Add garlic and thyme. Stir and cook 1 more min. Add spinach, toss until wilted (1 min). Season. Keep warm.</li>
-          <li>Toast rye bread. Bring 8cm of water to a gentle simmer in a deep saucepan. Add vinegar.</li>
-          <li>Crack each egg into a small cup. Create a gentle whirlpool in the water. Slide egg in. Cook 3 min for soft yolk, 4 min for firm.</li>
-          <li>Remove eggs with a slotted spoon. Pat dry on paper towel. Season with pepper.</li>
-          <li>Plate: rye toast, mushroom-spinach mix, eggs on top. Grapefruit on the side. Take <strong>Vit D3 + Acetyl L-Carnitine</strong>.</li>
-        </ol>
+    </div>
+    <div class="meal-card meal-di">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">🌙</span><span class="meal-label">Dinner</span></div>
+        <div class="meal-name">Lemon-Herb Scallop &amp; Veggie Sheet Pan</div>
+        <div class="food-emojis">🍤🥒🫑🧅🧄🍋</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 450 kcal</span><span class="mp mp-p">💪 40g protein</span>
+          <span class="mp mp-c">🌾 20g carbs</span><span class="mp mp-f">🥑 18g fat</span><span class="mp mp-fi">🌿 4g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Sea scallops</td><td>200g 6-8 large</td><td>patted VERY dry</td><td class="kc">176</td></tr>
+              <tr><td>Zucchini</td><td>150g</td><td>half-moon slices</td><td class="kc">25</td></tr>
+              <tr><td>Red bell pepper</td><td>100g</td><td>chunky pieces</td><td class="kc">31</td></tr>
+              <tr><td>Red onion</td><td>80g</td><td>wedges</td><td class="kc">32</td></tr>
+              <tr><td>Garlic</td><td>3 cloves</td><td>whole peeled</td><td class="kc">13</td></tr>
+              <tr><td>Olive oil</td><td>2 tsp total</td><td>—</td><td class="kc">80</td></tr>
+              <tr><td>Butter unsalted</td><td>5g</td><td>finishing</td><td class="kc">36</td></tr>
+              <tr><td>Lemon</td><td>1 whole</td><td>zest + juice</td><td class="kc">17</td></tr>
+              <tr><td>Fresh thyme</td><td>2 sprigs</td><td>leaves stripped</td><td class="kc">3</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>450</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Preheat oven 220°C. Toss veg with 1 tsp oil, herbs, salt. Roast 15 min.</li>
+              <li>Pat scallops THOROUGHLY dry. Season both sides with salt and white pepper.</li>
+              <li>Heat remaining 1 tsp oil in cast iron until SMOKING. Add scallops — do NOT move for 90 seconds.</li>
+              <li>Flip. Add butter. Cook 60 more seconds basting with butter. Squeeze lemon. Remove immediately.</li>
+              <li>Plate over roasted veg with pan juices. Take Magnesium after dinner.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Scallops cook in under 3 min total — they go from perfect to rubbery in 60 seconds. Golden exterior + slightly translucent centre = perfection.</div></div>
+        </div>
       </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> Mushrooms are rich in selenium and B vitamins that support liver detoxification enzymes. Don't wash them — wipe with a damp cloth so they sear, not steam.</div></div>
+    </div>
+  </div>
+  <div class="supp-sched">
+    <h3>💊 Wednesday Supplements</h3>
+    <div class="sched-row">
+      <div class="sched-block"><div class="sched-time">🌅 Breakfast</div>
+        <div class="sched-item">☀️ Vitamin D3 — 2000 to 5000 IU</div>
+        <div class="sched-item">🔋 Acetyl L-Carnitine — 500mg</div>
+      </div>
+      <div class="sched-block"><div class="sched-time">☀️ Lunch</div>
+        <div class="sched-item">🌿 Milk Thistle — 140 to 200mg</div>
+      </div>
+      <div class="sched-block"><div class="sched-time">🌙 Dinner / Bed</div>
+        <div class="sched-item">⚡ Magnesium — 300 to 400mg</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-total">
+    <span class="dt-label">📊 Wednesday Total</span>
+    <div class="dt-macros">
+      <span class="dtm">🔥 1240 kcal</span><span class="dtm">💪 88g P</span>
+      <span class="dtm">🌾 72g C</span><span class="dtm">🥑 57g F</span><span class="dtm">🌿 14g Fibre</span>
     </div>
   </div>
 </div>
 
-<div class="meal-card meal-lu">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">☀️</span><span class="meal-type-label">Lunch</span></div>
-    <div class="meal-name">Paneer Tikka Salad with Mint Yogurt Dressing</div>
-    <div class="food-emoji-strip">🧀🥗🥒🌿🫙🍋</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 440 kcal</span><span class="macro-pill mp-prot">💪 28g protein</span>
-      <span class="macro-pill mp-carb">🌾 22g carbs</span><span class="macro-pill mp-fat">🥑 26g fat</span>
-      <span class="macro-pill mp-fib">🌿 4g fibre</span>
-    </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Paneer</td><td>120g</td><td>cut into 2cm cubes</td><td class="kcal-col">300</td></tr>
-          <tr><td>Mixed salad greens</td><td>80g</td><td>washed</td><td class="kcal-col">16</td></tr>
-          <tr><td>Cucumber</td><td>80g</td><td>diced</td><td class="kcal-col">11</td></tr>
-          <tr><td>Low-fat plain yogurt</td><td>60g (¼ cup)</td><td>for dressing</td><td class="kcal-col">36</td></tr>
-          <tr><td>Fresh mint leaves</td><td>10g</td><td>finely chopped</td><td class="kcal-col">4</td></tr>
-          <tr><td>Lemon juice</td><td>1 tbsp</td><td>—</td><td class="kcal-col">4</td></tr>
-          <tr><td>Cumin powder</td><td>½ tsp</td><td>for marinating paneer</td><td class="kcal-col">4</td></tr>
-          <tr><td>Paprika / chilli powder</td><td>¼ tsp</td><td>for marinating</td><td class="kcal-col">2</td></tr>
-          <tr><td>Turmeric</td><td>¼ tsp</td><td>for marinating</td><td class="kcal-col">2</td></tr>
-          <tr><td>Olive oil spray</td><td>1 spray for grilling</td><td>—</td><td class="kcal-col">8</td></tr>
-          <tr><td>Salt</td><td>pinch</td><td>—</td><td class="kcal-col">0</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~440</strong></td></tr>
-        </table>
-      </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Marinate: mix 2 tbsp of the yogurt with cumin, paprika, turmeric and salt. Toss paneer cubes in marinade. Let sit 15 min minimum (or overnight).</li>
-          <li>Heat a grill pan or non-stick pan over high heat. Spray with olive oil. Grill paneer 2–3 min per side until charred marks appear.</li>
-          <li>Make dressing: whisk remaining yogurt with chopped mint, lemon juice and a pinch of salt.</li>
-          <li>Arrange salad greens and cucumber on a plate. Top with grilled paneer cubes.</li>
-          <li>Drizzle mint-yogurt dressing generously over the top. Take <strong>Milk Thistle</strong> with this meal.</li>
-        </ol>
-      </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> Paneer is high in conjugated linoleic acid (CLA) which may help reduce liver fat. Use low-fat yogurt for the dressing to keep calories in check.</div></div>
-    </div>
-  </div>
-</div>
-
-<div class="meal-card meal-di">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">🌙</span><span class="meal-type-label">Dinner</span></div>
-    <div class="meal-name">Lemon-Herb Scallop & Veggie Sheet Pan</div>
-    <div class="food-emoji-strip">🍤🥒🫑🧅🧄🍋</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 450 kcal</span><span class="macro-pill mp-prot">💪 40g protein</span>
-      <span class="macro-pill mp-carb">🌾 20g carbs</span><span class="macro-pill mp-fat">🥑 18g fat</span>
-      <span class="macro-pill mp-fib">🌿 4g fibre</span>
-    </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Sea scallops</td><td>200g (6–8 large)</td><td>patted VERY dry (critical!)</td><td class="kcal-col">176</td></tr>
-          <tr><td>Zucchini</td><td>150g (1 medium)</td><td>half-moon slices</td><td class="kcal-col">25</td></tr>
-          <tr><td>Red bell pepper</td><td>100g (¾ pepper)</td><td>chunky pieces</td><td class="kcal-col">31</td></tr>
-          <tr><td>Red onion</td><td>80g (½ small)</td><td>wedges</td><td class="kcal-col">32</td></tr>
-          <tr><td>Garlic cloves</td><td>3 (9g)</td><td>whole, peeled</td><td class="kcal-col">13</td></tr>
-          <tr><td>Olive oil</td><td>2 tsp total (10ml)</td><td>—</td><td class="kcal-col">80</td></tr>
-          <tr><td>Unsalted butter</td><td>5g (1 tsp)</td><td>for finishing</td><td class="kcal-col">36</td></tr>
-          <tr><td>Fresh lemon</td><td>1 whole</td><td>zest + juice</td><td class="kcal-col">17</td></tr>
-          <tr><td>Fresh thyme or rosemary</td><td>2 sprigs</td><td>leaves stripped</td><td class="kcal-col">3</td></tr>
-          <tr><td>Salt, white pepper</td><td>pinch each</td><td>—</td><td class="kcal-col">0</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~450</strong></td></tr>
-        </table>
-      </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Preheat oven to 220°C/425°F. Toss zucchini, bell pepper, onion and garlic with 1 tsp oil, herbs, salt and pepper. Spread on baking sheet. Roast 15 min.</li>
-          <li>Pat scallops THOROUGHLY dry with paper towels. Remove side muscle if present. Season with salt and white pepper on both sides.</li>
-          <li>Heat remaining 1 tsp oil in a cast iron or stainless pan over VERY HIGH heat until smoking.</li>
-          <li>Add scallops in a single layer. Do NOT move them for 90 seconds — this builds the golden crust. Flip.</li>
-          <li>Add butter. Cook 60 more seconds, basting with butter. Squeeze lemon over scallops. Remove immediately — do not overcook.</li>
-          <li>Plate scallops over roasted vegetables. Drizzle pan juices on top. Take <strong>Magnesium</strong> after dinner.</li>
-        </ol>
-      </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> Scallops cook in under 3 minutes total — they go from perfect to rubbery in 60 seconds. They should feel slightly springy when pressed. Golden exterior + slightly translucent centre = perfection.</div></div>
-    </div>
-  </div>
-</div>
-```
-
-  </div>
-  <div class="supp-schedule">
-    <h3>💊 Wednesday Supplement Schedule</h3>
-    <div class="supp-time-row">
-      <div class="supp-time-block"><div class="time-label">🌅 Breakfast</div>
-        <div class="supp-item">☀️ Vitamin D3 — 2000–5000 IU</div>
-        <div class="supp-item">🔋 Acetyl L-Carnitine — 500mg</div>
-      </div>
-      <div class="supp-time-block"><div class="time-label">☀️ Lunch</div>
-        <div class="supp-item">🌿 Milk Thistle — 140–200mg</div>
-      </div>
-      <div class="supp-time-block"><div class="time-label">🌙 Dinner / Bedtime</div>
-        <div class="supp-item">⚡ Magnesium Glycinate — 300–400mg</div>
-      </div>
-    </div>
-  </div>
-  <div class="day-total-bar">
-    <span class="day-total-label">📊 Wednesday Total</span>
-    <div class="day-total-macros">
-      <span class="dtm">🔥 1240 kcal</span><span class="dtm">💪 88g Protein</span>
-      <span class="dtm">🌾 72g Carbs</span><span class="dtm">🥑 57g Fat</span><span class="dtm">🌿 14g Fibre</span>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     THURSDAY
-═══════════════════════════════════════════════════════════════ -->
+<!-- ══════════ THURSDAY ══════════ -->
 
 <div id="day-thu" class="day-panel">
   <div class="day-header">
     <div class="day-emoji">🔥</div>
     <div class="day-title">Thursday — Power Bowl Day!</div>
-    <div class="day-macro-strip">
-      <div class="day-macro-chip" style="background:#fff3cd;color:#856404">🔥 1270 kcal</div>
-      <div class="day-macro-chip" style="background:#d4edda;color:#155724">💪 96g P</div>
-      <div class="day-macro-chip" style="background:#cce5ff;color:#004085">🌾 94g C</div>
-      <div class="day-macro-chip" style="background:#ffe5d0;color:#7a3419">🥑 48g F</div>
-      <div class="day-macro-chip" style="background:#e2d9f3;color:#432874">🌿 25g Fib</div>
+    <div class="day-chips">
+      <span class="dchip" style="background:#fff3cd;color:#856404">🔥 1270 kcal</span>
+      <span class="dchip" style="background:#d4edda;color:#155724">💪 96g P</span>
+      <span class="dchip" style="background:#cce5ff;color:#004085">🌾 94g C</span>
+      <span class="dchip" style="background:#ffe5d0;color:#7a3419">🥑 48g F</span>
     </div>
   </div>
   <div class="meals-grid">
-
-```
-<div class="meal-card meal-bf">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">🌅</span><span class="meal-type-label">Breakfast</span></div>
-    <div class="meal-name">Silken Tofu Smoothie Bowl</div>
-    <div class="food-emoji-strip">🧈🍌🫐🥝🌱🌾</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 360 kcal</span><span class="macro-pill mp-prot">💪 18g protein</span>
-      <span class="macro-pill mp-carb">🌾 40g carbs</span><span class="macro-pill mp-fat">🥑 12g fat</span>
-      <span class="macro-pill mp-fib">🌿 8g fibre</span>
+    <div class="meal-card meal-bf">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">🌅</span><span class="meal-label">Breakfast</span></div>
+        <div class="meal-name">Silken Tofu Smoothie Bowl</div>
+        <div class="food-emojis">🧈🍌🫐🥝🌱🌾</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 360 kcal</span><span class="mp mp-p">💪 18g protein</span>
+          <span class="mp mp-c">🌾 40g carbs</span><span class="mp mp-f">🥑 12g fat</span><span class="mp mp-fi">🌿 8g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Silken tofu</td><td>150g</td><td>drained</td><td class="kc">75</td></tr>
+              <tr><td>Frozen mixed berries</td><td>100g</td><td>frozen</td><td class="kc">35</td></tr>
+              <tr><td>Banana</td><td>1/2 medium 60g</td><td>frozen for creaminess</td><td class="kc">53</td></tr>
+              <tr><td>Unsweetened almond milk</td><td>60ml</td><td>—</td><td class="kc">8</td></tr>
+              <tr><td>Chia seeds</td><td>1 tbsp 12g</td><td>topping</td><td class="kc">58</td></tr>
+              <tr><td>Kiwi</td><td>1 medium 75g</td><td>sliced</td><td class="kc">45</td></tr>
+              <tr><td>Low-sugar granola</td><td>25g</td><td>topping</td><td class="kc">98</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>360</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Blend silken tofu, frozen berries, frozen banana and almond milk until thick and smooth. It should be spoonable, not drinkable.</li>
+              <li>Pour into a wide bowl.</li>
+              <li>Arrange toppings: kiwi slices, granola, chia seeds.</li>
+              <li>Eat immediately. Take Vit D3 + Acetyl L-Carnitine with this meal.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Freeze banana in advance for the creamiest base. Chia seeds provide omega-3 ALA and 10g fibre per 30g serving.</div></div>
+        </div>
+      </div>
     </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Silken tofu</td><td>150g</td><td>drained</td><td class="kcal-col">75</td></tr>
-          <tr><td>Frozen mixed berries</td><td>100g</td><td>frozen (thickens bowl)</td><td class="kcal-col">35</td></tr>
-          <tr><td>Banana</td><td>½ medium (60g)</td><td>frozen for creaminess</td><td class="kcal-col">53</td></tr>
-          <tr><td>Unsweetened almond milk</td><td>60ml (¼ cup)</td><td>—</td><td class="kcal-col">8</td></tr>
-          <tr><td>Chia seeds</td><td>1 tbsp (12g)</td><td>toppings</td><td class="kcal-col">58</td></tr>
-          <tr><td>Kiwi</td><td>1 medium (75g)</td><td>peeled, sliced</td><td class="kcal-col">45</td></tr>
-          <tr><td>Low-sugar granola</td><td>25g (2 tbsp)</td><td>topping</td><td class="kcal-col">98</td></tr>
-          <tr><td>Fresh berries (extra)</td><td>30g</td><td>topping</td><td class="kcal-col">10</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~360</strong></td></tr>
-        </table>
+    <div class="meal-card meal-lu">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">☀️</span><span class="meal-label">Lunch</span></div>
+        <div class="meal-name">Shrimp &amp; Avocado Lettuce Wraps with Mango Salsa</div>
+        <div class="food-emojis">🍤🥑🥭🍋🥬🌶️</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 430 kcal</span><span class="mp mp-p">💪 32g protein</span>
+          <span class="mp mp-c">🌾 24g carbs</span><span class="mp mp-f">🥑 20g fat</span><span class="mp mp-fi">🌿 7g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Raw shrimp peeled</td><td>150g</td><td>thawed, patted dry</td><td class="kc">127</td></tr>
+              <tr><td>Avocado</td><td>75g</td><td>diced</td><td class="kc">120</td></tr>
+              <tr><td>Mango</td><td>80g</td><td>small dice</td><td class="kc">51</td></tr>
+              <tr><td>Romaine lettuce</td><td>4 large leaves</td><td>washed, dried</td><td class="kc">11</td></tr>
+              <tr><td>Red onion</td><td>20g</td><td>very finely diced</td><td class="kc">8</td></tr>
+              <tr><td>Lime juice</td><td>2 tbsp</td><td>—</td><td class="kc">8</td></tr>
+              <tr><td>Coriander</td><td>15g</td><td>chopped</td><td class="kc">3</td></tr>
+              <tr><td>Olive oil</td><td>1 tsp</td><td>cooking shrimp</td><td class="kc">40</td></tr>
+              <tr><td>Garlic</td><td>1 clove</td><td>minced</td><td class="kc">4</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>430</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Make mango salsa: combine mango, red onion, half the coriander, 1 tbsp lime juice and chilli flakes. Set aside.</li>
+              <li>Cook shrimp: heat olive oil on high, add garlic 20 sec, add shrimp 1-2 min per side until pink.</li>
+              <li>Toss shrimp with remaining lime juice and coriander.</li>
+              <li>Fill lettuce cups with shrimp, top with mango salsa and avocado.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Take Milk Thistle. Shrimp is one of the highest-protein, lowest-calorie seafoods — 150g provides 32g protein for only 127 kcal.</div></div>
+        </div>
       </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Place silken tofu, frozen berries, frozen banana and almond milk in a blender. Blend until completely smooth and thick — it should be spoonable, not drinkable. Add ice if too thin.</li>
-          <li>Pour into a wide bowl. The mixture should be thick enough to hold toppings — if too runny, blend less milk next time.</li>
-          <li>Arrange toppings in sections: kiwi slices, fresh berries, granola, chia seeds.</li>
-          <li>Eat immediately. Take <strong>Vit D3 + Acetyl L-Carnitine</strong> with this meal.</li>
-        </ol>
+    </div>
+    <div class="meal-card meal-di">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">🌙</span><span class="meal-label">Dinner</span></div>
+        <div class="meal-name">Baked Salmon + Lentil Soup + Green Salad</div>
+        <div class="food-emojis">🐟🥦🥕🍲🥗🍋</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 480 kcal</span><span class="mp mp-p">💪 46g protein</span>
+          <span class="mp mp-c">🌾 30g carbs</span><span class="mp mp-f">🥑 16g fat</span><span class="mp mp-fi">🌿 10g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Salmon fillet</td><td>180g raw</td><td>patted dry</td><td class="kc">297</td></tr>
+              <tr><td>Broccoli florets</td><td>100g</td><td>—</td><td class="kc">34</td></tr>
+              <tr><td>Carrots</td><td>80g</td><td>batons</td><td class="kc">33</td></tr>
+              <tr><td>Brown lentils canned</td><td>120g drained</td><td>rinsed</td><td class="kc">115</td></tr>
+              <tr><td>Mixed greens</td><td>50g</td><td>—</td><td class="kc">10</td></tr>
+              <tr><td>Olive oil total</td><td>2 tsp</td><td>split uses</td><td class="kc">80</td></tr>
+              <tr><td>Garlic + cumin</td><td>1 clove + 1/4 tsp</td><td>for lentils</td><td class="kc">8</td></tr>
+              <tr><td>Lemon</td><td>1/2</td><td>juice + zest</td><td class="kc">8</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>480</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Preheat oven 200°C. Season salmon with lemon zest, salt, pepper. Bake 13-15 min.</li>
+              <li>Steam broccoli and carrots 5-6 min until tender-crisp.</li>
+              <li>Quick lentil soup: sauté garlic in oil 30 sec, add lentils + 200ml water + cumin. Simmer 5 min, add lemon juice.</li>
+              <li>Dress greens with 1/2 tsp olive oil and lemon squeeze.</li>
+              <li>Plate salmon with steamed veg. Lentil soup in a bowl alongside. Take Magnesium after dinner.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Highest omega-3 meal of the week! Lentils provide slow-release energy and 8g fibre per serving.</div></div>
+        </div>
       </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> Freeze bananas in advance — peel, slice and freeze in a bag. Frozen banana is the key to a thick, creamy base. Chia seeds provide omega-3 ALA and 10g fibre per 30g serving.</div></div>
+    </div>
+  </div>
+  <div class="supp-sched">
+    <h3>💊 Thursday Supplements</h3>
+    <div class="sched-row">
+      <div class="sched-block"><div class="sched-time">🌅 Breakfast</div>
+        <div class="sched-item">☀️ Vitamin D3 — 2000 to 5000 IU</div>
+        <div class="sched-item">🔋 Acetyl L-Carnitine — 500mg</div>
+      </div>
+      <div class="sched-block"><div class="sched-time">☀️ Lunch</div>
+        <div class="sched-item">🌿 Milk Thistle — 140 to 200mg</div>
+      </div>
+      <div class="sched-block"><div class="sched-time">🌙 Dinner / Bed</div>
+        <div class="sched-item">⚡ Magnesium — 300 to 400mg</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-total">
+    <span class="dt-label">📊 Thursday Total</span>
+    <div class="dt-macros">
+      <span class="dtm">🔥 1270 kcal</span><span class="dtm">💪 96g P</span>
+      <span class="dtm">🌾 94g C</span><span class="dtm">🥑 48g F</span><span class="dtm">🌿 25g Fibre</span>
     </div>
   </div>
 </div>
 
-<div class="meal-card meal-lu">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">☀️</span><span class="meal-type-label">Lunch</span></div>
-    <div class="meal-name">Shrimp & Avocado Lettuce Wraps with Mango Salsa</div>
-    <div class="food-emoji-strip">🍤🥑🥭🍋🥬🌶️</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 430 kcal</span><span class="macro-pill mp-prot">💪 32g protein</span>
-      <span class="macro-pill mp-carb">🌾 24g carbs</span><span class="macro-pill mp-fat">🥑 20g fat</span>
-      <span class="macro-pill mp-fib">🌿 7g fibre</span>
-    </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Raw shrimp (peeled, deveined)</td><td>150g</td><td>thawed, patted dry</td><td class="kcal-col">127</td></tr>
-          <tr><td>Avocado</td><td>75g (½ medium)</td><td>diced</td><td class="kcal-col">120</td></tr>
-          <tr><td>Mango</td><td>80g (⅓ medium)</td><td>small dice</td><td class="kcal-col">51</td></tr>
-          <tr><td>Romaine lettuce leaves</td><td>4 large leaves (80g)</td><td>washed, dried — cups</td><td class="kcal-col">11</td></tr>
-          <tr><td>Red onion</td><td>20g</td><td>very finely diced</td><td class="kcal-col">8</td></tr>
-          <tr><td>Lime juice</td><td>2 tbsp (30ml)</td><td>freshly squeezed</td><td class="kcal-col">8</td></tr>
-          <tr><td>Fresh coriander/cilantro</td><td>15g</td><td>roughly chopped</td><td class="kcal-col">3</td></tr>
-          <tr><td>Olive oil</td><td>1 tsp (5ml)</td><td>for cooking shrimp</td><td class="kcal-col">40</td></tr>
-          <tr><td>Garlic clove</td><td>1 (3g)</td><td>minced</td><td class="kcal-col">4</td></tr>
-          <tr><td>Chilli flakes</td><td>pinch (optional)</td><td>—</td><td class="kcal-col">2</td></tr>
-          <tr><td>Salt</td><td>pinch</td><td>—</td><td class="kcal-col">0</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~430</strong></td></tr>
-        </table>
-      </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Make mango salsa: combine mango, red onion, half the coriander, 1 tbsp lime juice and chilli flakes. Toss gently. Set aside.</li>
-          <li>Cook shrimp: heat olive oil in a pan over high heat. Add garlic, cook 20 seconds. Add shrimp. Cook 1–2 min per side until pink. Remove from heat.</li>
-          <li>Squeeze remaining lime juice over cooked shrimp. Toss with remaining coriander.</li>
-          <li>Prepare lettuce cups on a plate. Add 3–4 shrimp per cup.</li>
-          <li>Top with mango salsa and diced avocado. Serve immediately (lettuce wilts quickly). Take <strong>Milk Thistle</strong>.</li>
-        </ol>
-      </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> Shrimp are one of the highest-protein, lowest-calorie seafoods — 150g provides 32g protein for only 127 kcal. Mango provides beta-carotene and vitamin C which support liver health.</div></div>
-    </div>
-  </div>
-</div>
-
-<div class="meal-card meal-di">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">🌙</span><span class="meal-type-label">Dinner</span></div>
-    <div class="meal-name">Baked Salmon + Lentil Soup + Green Salad</div>
-    <div class="food-emoji-strip">🐟🥦🥕🍲🥗🍋</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 480 kcal</span><span class="macro-pill mp-prot">💪 46g protein</span>
-      <span class="macro-pill mp-carb">🌾 30g carbs</span><span class="macro-pill mp-fat">🥑 16g fat</span>
-      <span class="macro-pill mp-fib">🌿 10g fibre</span>
-    </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Salmon fillet</td><td>180g raw</td><td>patted dry</td><td class="kcal-col">297</td></tr>
-          <tr><td>Broccoli florets</td><td>100g</td><td>—</td><td class="kcal-col">34</td></tr>
-          <tr><td>Carrots</td><td>80g</td><td>batons</td><td class="kcal-col">33</td></tr>
-          <tr><td>Brown lentils (canned)</td><td>120g drained</td><td>rinsed</td><td class="kcal-col">115</td></tr>
-          <tr><td>Mixed greens</td><td>50g</td><td>—</td><td class="kcal-col">10</td></tr>
-          <tr><td>Olive oil</td><td>2 tsp total (10ml)</td><td>split uses</td><td class="kcal-col">80</td></tr>
-          <tr><td>Garlic + cumin for lentils</td><td>1 clove + ¼ tsp</td><td>—</td><td class="kcal-col">8</td></tr>
-          <tr><td>Lemon</td><td>½</td><td>juice + zest</td><td class="kcal-col">8</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~480</strong></td></tr>
-        </table>
-      </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Preheat oven 200°C/400°F. Season salmon with lemon zest, salt, pepper. Bake 13–15 min until opaque and flakes easily.</li>
-          <li>Steam broccoli and carrots 5–6 min until tender-crisp. Season with a pinch of salt.</li>
-          <li>Quick lentil soup: sauté garlic in ½ tsp oil 30 sec. Add rinsed lentils, 200ml water, cumin. Simmer 5 min. Season with lemon juice and salt.</li>
-          <li>Dress mixed greens with remaining ½ tsp olive oil and a squeeze of lemon.</li>
-          <li>Plate salmon with steamed veg alongside. Serve lentil soup in a small bowl. Side salad on the plate. Take <strong>Magnesium</strong> with dinner.</li>
-        </ol>
-      </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> This is your highest omega-3 meal of the week! Lentils provide slow-release energy and 8g fibre per serving — key for stabilising blood sugar and reducing liver fat.</div></div>
-    </div>
-  </div>
-</div>
-```
-
-  </div>
-  <div class="supp-schedule">
-    <h3>💊 Thursday Supplement Schedule</h3>
-    <div class="supp-time-row">
-      <div class="supp-time-block"><div class="time-label">🌅 Breakfast</div>
-        <div class="supp-item">☀️ Vitamin D3 — 2000–5000 IU</div>
-        <div class="supp-item">🔋 Acetyl L-Carnitine — 500mg</div>
-      </div>
-      <div class="supp-time-block"><div class="time-label">☀️ Lunch</div>
-        <div class="supp-item">🌿 Milk Thistle — 140–200mg</div>
-      </div>
-      <div class="supp-time-block"><div class="time-label">🌙 Dinner / Bedtime</div>
-        <div class="supp-item">⚡ Magnesium Glycinate — 300–400mg</div>
-      </div>
-    </div>
-  </div>
-  <div class="day-total-bar">
-    <span class="day-total-label">📊 Thursday Total</span>
-    <div class="day-total-macros">
-      <span class="dtm">🔥 1270 kcal</span><span class="dtm">💪 96g Protein</span>
-      <span class="dtm">🌾 94g Carbs</span><span class="dtm">🥑 48g Fat</span><span class="dtm">🌿 25g Fibre</span>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     FRIDAY
-═══════════════════════════════════════════════════════════════ -->
+<!-- ══════════ FRIDAY ══════════ -->
 
 <div id="day-fri" class="day-panel">
   <div class="day-header">
     <div class="day-emoji">⚡</div>
     <div class="day-title">Friday — Feel-Good Friday!</div>
-    <div class="day-macro-strip">
-      <div class="day-macro-chip" style="background:#fff3cd;color:#856404">🔥 1240 kcal</div>
-      <div class="day-macro-chip" style="background:#d4edda;color:#155724">💪 92g P</div>
-      <div class="day-macro-chip" style="background:#cce5ff;color:#004085">🌾 108g C</div>
-      <div class="day-macro-chip" style="background:#ffe5d0;color:#7a3419">🥑 36g F</div>
-      <div class="day-macro-chip" style="background:#e2d9f3;color:#432874">🌿 21g Fib</div>
+    <div class="day-chips">
+      <span class="dchip" style="background:#fff3cd;color:#856404">🔥 1240 kcal</span>
+      <span class="dchip" style="background:#d4edda;color:#155724">💪 92g P</span>
+      <span class="dchip" style="background:#cce5ff;color:#004085">🌾 108g C</span>
+      <span class="dchip" style="background:#ffe5d0;color:#7a3419">🥑 36g F</span>
     </div>
   </div>
   <div class="meals-grid">
-
-```
-<div class="meal-card meal-bf">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">🌅</span><span class="meal-type-label">Breakfast</span></div>
-    <div class="meal-name">Egg White Omelette with Paneer & Bell Pepper + Apple</div>
-    <div class="food-emoji-strip">🥚🧀🫑🧅🍎🍵</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 330 kcal</span><span class="macro-pill mp-prot">💪 28g protein</span>
-      <span class="macro-pill mp-carb">🌾 22g carbs</span><span class="macro-pill mp-fat">🥑 10g fat</span>
-      <span class="macro-pill mp-fib">🌿 4g fibre</span>
+    <div class="meal-card meal-bf">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">🌅</span><span class="meal-label">Breakfast</span></div>
+        <div class="meal-name">Egg White Omelette with Paneer &amp; Bell Pepper + Apple</div>
+        <div class="food-emojis">🥚🧀🫑🧅🍎</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 330 kcal</span><span class="mp mp-p">💪 28g protein</span>
+          <span class="mp mp-c">🌾 22g carbs</span><span class="mp mp-f">🥑 10g fat</span><span class="mp mp-fi">🌿 4g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Egg whites</td><td>5 large 175ml</td><td>—</td><td class="kc">88</td></tr>
+              <tr><td>Whole egg</td><td>1</td><td>for richness</td><td class="kc">70</td></tr>
+              <tr><td>Paneer</td><td>30g</td><td>crumbled</td><td class="kc">75</td></tr>
+              <tr><td>Red bell pepper</td><td>60g</td><td>finely diced</td><td class="kc">19</td></tr>
+              <tr><td>Brown onion</td><td>30g</td><td>finely diced</td><td class="kc">12</td></tr>
+              <tr><td>Spinach</td><td>30g</td><td>—</td><td class="kc">7</td></tr>
+              <tr><td>Olive oil spray</td><td>1-2 sprays</td><td>—</td><td class="kc">10</td></tr>
+              <tr><td>Apple</td><td>1 medium 150g</td><td>sliced</td><td class="kc">78</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>330</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Whisk egg whites and whole egg. Season with salt and pepper.</li>
+              <li>Spray pan. Sauté onion and pepper 3 min. Add spinach 30 sec until wilted.</li>
+              <li>Pour egg mixture over veg. Cook 2-3 min until edges set.</li>
+              <li>Scatter paneer over one half. Fold. Cook 1 more min. Serve with apple slices.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Take Vit D3 + Acetyl L-Carnitine. Using mostly egg whites reduces fat by 70% while keeping protein high.</div></div>
+        </div>
+      </div>
     </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Egg whites</td><td>5 large (175ml)</td><td>from 5 eggs, or carton</td><td class="kcal-col">88</td></tr>
-          <tr><td>Whole egg</td><td>1</td><td>added for richness + yolk nutrients</td><td class="kcal-col">70</td></tr>
-          <tr><td>Paneer</td><td>30g</td><td>crumbled or grated</td><td class="kcal-col">75</td></tr>
-          <tr><td>Red bell pepper</td><td>60g (½ small)</td><td>finely diced</td><td class="kcal-col">19</td></tr>
-          <tr><td>Brown onion</td><td>30g</td><td>finely diced</td><td class="kcal-col">12</td></tr>
-          <tr><td>Fresh spinach</td><td>30g</td><td>—</td><td class="kcal-col">7</td></tr>
-          <tr><td>Olive oil spray</td><td>1–2 sprays</td><td>—</td><td class="kcal-col">10</td></tr>
-          <tr><td>Apple</td><td>1 medium (150g)</td><td>sliced</td><td class="kcal-col">78</td></tr>
-          <tr><td>Herbal tea</td><td>1 cup</td><td>green or peppermint</td><td class="kcal-col">2</td></tr>
-          <tr><td>Salt, black pepper, chilli flakes</td><td>pinch each</td><td>—</td><td class="kcal-col">0</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~330</strong></td></tr>
-        </table>
+    <div class="meal-card meal-lu">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">☀️</span><span class="meal-label">Lunch</span></div>
+        <div class="meal-name">Chickpea &amp; Spinach Curry + Brown Rice + Raita</div>
+        <div class="food-emojis">🫘🥬🥛🍚🌶️🌿</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 490 kcal</span><span class="mp mp-p">💪 22g protein</span>
+          <span class="mp mp-c">🌾 58g carbs</span><span class="mp mp-f">🥑 14g fat</span><span class="mp mp-fi">🌿 11g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Canned white chickpeas</td><td>150g drained</td><td>rinsed</td><td class="kc">197</td></tr>
+              <tr><td>Baby spinach</td><td>80g</td><td>—</td><td class="kc">18</td></tr>
+              <tr><td>Light coconut milk</td><td>80ml</td><td>use light version</td><td class="kc">55</td></tr>
+              <tr><td>Canned diced tomatoes</td><td>80g</td><td>—</td><td class="kc">16</td></tr>
+              <tr><td>Brown rice dry</td><td>45g</td><td>cook to 1/2 cup</td><td class="kc">160</td></tr>
+              <tr><td>Low-fat yogurt raita</td><td>80g</td><td>—</td><td class="kc">48</td></tr>
+              <tr><td>Cucumber raita</td><td>40g</td><td>finely diced</td><td class="kc">5</td></tr>
+              <tr><td>Onion + garlic + ginger</td><td>40g + 2 cloves + 1 tsp</td><td>—</td><td class="kc">28</td></tr>
+              <tr><td>Cumin + turmeric + garam masala</td><td>1/2 tsp each</td><td>—</td><td class="kc">6</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>490</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Cook brown rice: 45g + 100ml water, boil, cover, simmer 25 min.</li>
+              <li>Sauté onion 3 min. Add garlic, ginger, spices — stir 1 min until fragrant.</li>
+              <li>Add tomatoes, cook 3 min. Add coconut milk and chickpeas. Simmer 8 min.</li>
+              <li>Add spinach, stir until wilted. Season.</li>
+              <li>Raita: mix yogurt, diced cucumber, pinch of cumin and salt. Serve all together.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Take Milk Thistle. Use LIGHT coconut milk. Make double batch — curry tastes even better the next day!</div></div>
+        </div>
       </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Whisk egg whites and whole egg together. Season with salt and pepper.</li>
-          <li>Spray non-stick pan with olive oil. Sauté onion and bell pepper over medium heat 3 min until soft.</li>
-          <li>Add spinach, stir 30 seconds until wilted. Spread mixture evenly in pan.</li>
-          <li>Pour egg mixture over vegetables. Cook undisturbed 2–3 min until edges are set.</li>
-          <li>Scatter paneer crumbles over one half. Fold omelette over. Cook 1 more min.</li>
-          <li>Slide onto plate. Serve with sliced apple and herbal tea. Take <strong>Vit D3 + Acetyl L-Carnitine</strong>.</li>
-        </ol>
+    </div>
+    <div class="meal-card meal-di">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">🌙</span><span class="meal-label">Dinner</span></div>
+        <div class="meal-name">Grilled Fish + Mango-Avocado Salsa + Quinoa</div>
+        <div class="food-emojis">🐟🥭🥑🫘🍋🌿</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 420 kcal</span><span class="mp mp-p">💪 42g protein</span>
+          <span class="mp mp-c">🌾 28g carbs</span><span class="mp mp-f">🥑 12g fat</span><span class="mp mp-fi">🌿 6g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Fish fillet cod or halibut</td><td>200g raw</td><td>patted dry</td><td class="kc">188</td></tr>
+              <tr><td>Quinoa dry</td><td>40g</td><td>rinsed</td><td class="kc">144</td></tr>
+              <tr><td>Green beans</td><td>100g</td><td>trimmed</td><td class="kc">31</td></tr>
+              <tr><td>Mango</td><td>60g</td><td>small dice</td><td class="kc">38</td></tr>
+              <tr><td>Avocado</td><td>40g</td><td>small dice</td><td class="kc">64</td></tr>
+              <tr><td>Red onion + lime + coriander</td><td>20g + 1 tbsp + 10g</td><td>salsa</td><td class="kc">14</td></tr>
+              <tr><td>Cumin + paprika</td><td>1/4 tsp each</td><td>fish seasoning</td><td class="kc">4</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>420</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Cook quinoa: 40g + 100ml water, boil, cover, simmer 12 min, fluff.</li>
+              <li>Blanch green beans in boiling salted water 3-4 min. Drain.</li>
+              <li>Gently combine mango, avocado, red onion, lime juice and coriander for salsa.</li>
+              <li>Season fish with cumin, paprika, salt. Grill or pan-sear on high 3-4 min per side.</li>
+              <li>Plate quinoa + green beans + fish. Spoon salsa over fish. Take Magnesium.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Make salsa fresh — avocado oxidises quickly. Squeeze extra lime and press cling wrap directly on surface to store.</div></div>
+        </div>
       </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> Using mostly egg whites reduces fat by ~70% vs whole eggs while keeping protein high. Keeping 1 whole egg preserves the choline your liver needs for fat metabolism.</div></div>
+    </div>
+  </div>
+  <div class="supp-sched">
+    <h3>💊 Friday Supplements</h3>
+    <div class="sched-row">
+      <div class="sched-block"><div class="sched-time">🌅 Breakfast</div>
+        <div class="sched-item">☀️ Vitamin D3 — 2000 to 5000 IU</div>
+        <div class="sched-item">🔋 Acetyl L-Carnitine — 500mg</div>
+      </div>
+      <div class="sched-block"><div class="sched-time">☀️ Lunch</div>
+        <div class="sched-item">🌿 Milk Thistle — 140 to 200mg</div>
+      </div>
+      <div class="sched-block"><div class="sched-time">🌙 Dinner / Bed</div>
+        <div class="sched-item">⚡ Magnesium — 300 to 400mg</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-total">
+    <span class="dt-label">📊 Friday Total</span>
+    <div class="dt-macros">
+      <span class="dtm">🔥 1240 kcal</span><span class="dtm">💪 92g P</span>
+      <span class="dtm">🌾 108g C</span><span class="dtm">🥑 36g F</span><span class="dtm">🌿 21g Fibre</span>
     </div>
   </div>
 </div>
 
-<div class="meal-card meal-lu">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">☀️</span><span class="meal-type-label">Lunch</span></div>
-    <div class="meal-name">Chickpea & Spinach Curry + Brown Rice + Raita</div>
-    <div class="food-emoji-strip">🫘🥬🥛🍚🌶️🌿</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 490 kcal</span><span class="macro-pill mp-prot">💪 22g protein</span>
-      <span class="macro-pill mp-carb">🌾 58g carbs</span><span class="macro-pill mp-fat">🥑 14g fat</span>
-      <span class="macro-pill mp-fib">🌿 11g fibre</span>
-    </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Canned white chickpeas</td><td>150g drained</td><td>rinsed</td><td class="kcal-col">197</td></tr>
-          <tr><td>Baby spinach</td><td>80g</td><td>—</td><td class="kcal-col">18</td></tr>
-          <tr><td>Light coconut milk</td><td>80ml (⅓ cup)</td><td>use light, not full-fat</td><td class="kcal-col">55</td></tr>
-          <tr><td>Canned diced tomatoes</td><td>80g</td><td>—</td><td class="kcal-col">16</td></tr>
-          <tr><td>Brown rice (dry)</td><td>45g (¼ cup dry)</td><td>→ ½ cup cooked</td><td class="kcal-col">160</td></tr>
-          <tr><td>Low-fat yogurt (raita)</td><td>80g (⅓ cup)</td><td>—</td><td class="kcal-col">48</td></tr>
-          <tr><td>Cucumber (raita)</td><td>40g</td><td>finely diced</td><td class="kcal-col">5</td></tr>
-          <tr><td>Onion</td><td>40g</td><td>diced</td><td class="kcal-col">16</td></tr>
-          <tr><td>Olive oil</td><td>1 tsp (5ml)</td><td>—</td><td class="kcal-col">40</td></tr>
-          <tr><td>Garlic (2 cloves) + ginger (1 tsp)</td><td>—</td><td>minced</td><td class="kcal-col">12</td></tr>
-          <tr><td>Cumin, turmeric, garam masala</td><td>½ tsp each</td><td>—</td><td class="kcal-col">6</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~490</strong></td></tr>
-        </table>
-      </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Cook brown rice: 45g dry rice + 100ml water. Bring to boil, cover, simmer 25 min. Fluff with fork.</li>
-          <li>Heat olive oil in a pan. Sauté onion 3 min. Add garlic and ginger, cook 1 min. Add cumin, turmeric, garam masala — stir 30 seconds until fragrant.</li>
-          <li>Add canned tomatoes. Cook 3 min until sauce thickens slightly. Add coconut milk and chickpeas.</li>
-          <li>Simmer 8 min. Add spinach, stir until wilted (1 min). Taste and season.</li>
-          <li>Make raita: mix yogurt, diced cucumber, a pinch of cumin and salt.</li>
-          <li>Serve curry over rice with raita on the side. Take <strong>Milk Thistle</strong> with this meal.</li>
-        </ol>
-      </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> Use LIGHT coconut milk to keep fat lower. Turmeric + cumin are both anti-inflammatory for the liver. Make a double batch of curry — it tastes even better the next day!</div></div>
-    </div>
-  </div>
-</div>
-
-<div class="meal-card meal-di">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">🌙</span><span class="meal-type-label">Dinner</span></div>
-    <div class="meal-name">Grilled Fish Fillet with Mango-Avocado Salsa + Quinoa</div>
-    <div class="food-emoji-strip">🐟🥭🥑🫘🍋🌿</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 420 kcal</span><span class="macro-pill mp-prot">💪 42g protein</span>
-      <span class="macro-pill mp-carb">🌾 28g carbs</span><span class="macro-pill mp-fat">🥑 12g fat</span>
-      <span class="macro-pill mp-fib">🌿 6g fibre</span>
-    </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Fish fillet (Costco cod/halibut)</td><td>200g raw</td><td>patted dry</td><td class="kcal-col">188</td></tr>
-          <tr><td>Quinoa (dry)</td><td>40g</td><td>rinsed</td><td class="kcal-col">144</td></tr>
-          <tr><td>Green beans</td><td>100g</td><td>trimmed</td><td class="kcal-col">31</td></tr>
-          <tr><td>Mango</td><td>60g</td><td>small dice</td><td class="kcal-col">38</td></tr>
-          <tr><td>Avocado</td><td>40g</td><td>small dice</td><td class="kcal-col">64</td></tr>
-          <tr><td>Red onion</td><td>20g</td><td>finely diced</td><td class="kcal-col">8</td></tr>
-          <tr><td>Lime juice</td><td>1 tbsp</td><td>for salsa</td><td class="kcal-col">4</td></tr>
-          <tr><td>Fresh coriander</td><td>10g</td><td>chopped</td><td class="kcal-col">2</td></tr>
-          <tr><td>Olive oil spray</td><td>for grilling</td><td>—</td><td class="kcal-col">8</td></tr>
-          <tr><td>Cumin + paprika</td><td>¼ tsp each</td><td>for fish seasoning</td><td class="kcal-col">4</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~420</strong></td></tr>
-        </table>
-      </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Cook quinoa: 40g dry + 100ml water. Boil, cover, simmer 12 min. Fluff.</li>
-          <li>Blanch green beans in boiling salted water 3–4 min. Drain, keep warm.</li>
-          <li>Make mango-avocado salsa: gently combine mango, avocado, red onion, lime juice and coriander. Season with pinch of salt. Do not over-mix (avocado will mash).</li>
-          <li>Season fish with cumin, paprika, salt and pepper. Grill or pan-sear on high heat 3–4 min per side until cooked through.</li>
-          <li>Plate quinoa, green beans, fish fillet. Spoon salsa generously over fish. Take <strong>Magnesium</strong> after dinner.</li>
-        </ol>
-      </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> Make the salsa fresh — avocado oxidises quickly. If prepping ahead, squeeze extra lime juice on the avocado and store covered with cling wrap touching the surface.</div></div>
-    </div>
-  </div>
-</div>
-```
-
-  </div>
-  <div class="supp-schedule">
-    <h3>💊 Friday Supplement Schedule</h3>
-    <div class="supp-time-row">
-      <div class="supp-time-block"><div class="time-label">🌅 Breakfast</div>
-        <div class="supp-item">☀️ Vitamin D3 — 2000–5000 IU</div>
-        <div class="supp-item">🔋 Acetyl L-Carnitine — 500mg</div>
-      </div>
-      <div class="supp-time-block"><div class="time-label">☀️ Lunch</div>
-        <div class="supp-item">🌿 Milk Thistle — 140–200mg</div>
-      </div>
-      <div class="supp-time-block"><div class="time-label">🌙 Dinner / Bedtime</div>
-        <div class="supp-item">⚡ Magnesium Glycinate — 300–400mg</div>
-      </div>
-    </div>
-  </div>
-  <div class="day-total-bar">
-    <span class="day-total-label">📊 Friday Total</span>
-    <div class="day-total-macros">
-      <span class="dtm">🔥 1240 kcal</span><span class="dtm">💪 92g Protein</span>
-      <span class="dtm">🌾 108g Carbs</span><span class="dtm">🥑 36g Fat</span><span class="dtm">🌿 21g Fibre</span>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     SATURDAY
-═══════════════════════════════════════════════════════════════ -->
+<!-- ══════════ SATURDAY ══════════ -->
 
 <div id="day-sat" class="day-panel">
   <div class="day-header">
     <div class="day-emoji">🌈</div>
     <div class="day-title">Saturday — Weekend Vibes!</div>
-    <div class="day-macro-strip">
-      <div class="day-macro-chip" style="background:#fff3cd;color:#856404">🔥 1260 kcal</div>
-      <div class="day-macro-chip" style="background:#d4edda;color:#155724">💪 86g P</div>
-      <div class="day-macro-chip" style="background:#cce5ff;color:#004085">🌾 96g C</div>
-      <div class="day-macro-chip" style="background:#ffe5d0;color:#7a3419">🥑 50g F</div>
-      <div class="day-macro-chip" style="background:#e2d9f3;color:#432874">🌿 21g Fib</div>
+    <div class="day-chips">
+      <span class="dchip" style="background:#fff3cd;color:#856404">🔥 1260 kcal</span>
+      <span class="dchip" style="background:#d4edda;color:#155724">💪 86g P</span>
+      <span class="dchip" style="background:#cce5ff;color:#004085">🌾 96g C</span>
+      <span class="dchip" style="background:#ffe5d0;color:#7a3419">🥑 50g F</span>
     </div>
   </div>
   <div class="meals-grid">
-
-```
-<div class="meal-card meal-bf">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">🌅</span><span class="meal-type-label">Breakfast</span></div>
-    <div class="meal-name">Baked Avocado Egg Boats + Watermelon</div>
-    <div class="food-emoji-strip">🥑🥚🥚🌿🧀🍉</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 370 kcal</span><span class="macro-pill mp-prot">💪 18g protein</span>
-      <span class="macro-pill mp-carb">🌾 22g carbs</span><span class="macro-pill mp-fat">🥑 22g fat</span>
-      <span class="macro-pill mp-fib">🌿 7g fibre</span>
+    <div class="meal-card meal-bf">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">🌅</span><span class="meal-label">Breakfast</span></div>
+        <div class="meal-name">Baked Avocado Egg Boats + Watermelon</div>
+        <div class="food-emojis">🥑🥚🥚🌿🍉</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 370 kcal</span><span class="mp mp-p">💪 18g protein</span>
+          <span class="mp mp-c">🌾 22g carbs</span><span class="mp mp-f">🥑 22g fat</span><span class="mp mp-fi">🌿 7g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Ripe avocado</td><td>1 medium 150g</td><td>halved, stone removed</td><td class="kc">160</td></tr>
+              <tr><td>Small eggs</td><td>2</td><td>—</td><td class="kc">140</td></tr>
+              <tr><td>Cherry tomatoes</td><td>40g</td><td>quartered for topping</td><td class="kc">7</td></tr>
+              <tr><td>Chives or coriander</td><td>5g</td><td>chopped</td><td class="kc">2</td></tr>
+              <tr><td>Lemon juice</td><td>1 tsp</td><td>prevent browning</td><td class="kc">1</td></tr>
+              <tr><td>Watermelon</td><td>200g</td><td>cubed</td><td class="kc">60</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>370</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Preheat oven 220°C. Halve avocado, remove stone. Scoop a little extra flesh to enlarge hollow. Squeeze lemon over surface.</li>
+              <li>Place avocado halves in a muffin tin to stabilise. Season hollows with salt and pepper.</li>
+              <li>Carefully crack 1 small egg into each hollow. Bake 12-15 min for runny yolk, 15-18 for set.</li>
+              <li>Top with tomatoes, chives and chilli flakes. Serve with watermelon.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Take Vit D3 + Acetyl L-Carnitine. Use SMALL eggs — large eggs will overflow the avocado hollow!</div></div>
+        </div>
+      </div>
     </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Ripe avocado</td><td>1 medium (150g whole)</td><td>halved, stone removed</td><td class="kcal-col">160</td></tr>
-          <tr><td>Small eggs</td><td>2</td><td>—</td><td class="kcal-col">140</td></tr>
-          <tr><td>Cherry tomatoes</td><td>40g (3–4)</td><td>quartered, for topping</td><td class="kcal-col">7</td></tr>
-          <tr><td>Fresh chives or coriander</td><td>5g</td><td>finely chopped</td><td class="kcal-col">2</td></tr>
-          <tr><td>Chilli flakes</td><td>pinch (optional)</td><td>—</td><td class="kcal-col">1</td></tr>
-          <tr><td>Lemon juice</td><td>1 tsp</td><td>to prevent browning</td><td class="kcal-col">1</td></tr>
-          <tr><td>Watermelon</td><td>200g (1 cup cubed)</td><td>—</td><td class="kcal-col">60</td></tr>
-          <tr><td>Salt, black pepper</td><td>pinch each</td><td>—</td><td class="kcal-col">0</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~370</strong></td></tr>
-        </table>
+    <div class="meal-card meal-lu">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">☀️</span><span class="meal-label">Lunch</span></div>
+        <div class="meal-name">Tofu &amp; Veggie Buddha Bowl with Sesame-Ginger Dressing</div>
+        <div class="food-emojis">🧈🍠🫘🥬🌱🫙</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 470 kcal</span><span class="mp mp-p">💪 26g protein</span>
+          <span class="mp mp-c">🌾 46g carbs</span><span class="mp mp-f">🥑 18g fat</span><span class="mp mp-fi">🌿 9g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Firm tofu</td><td>150g</td><td>pressed, cubed</td><td class="kc">108</td></tr>
+              <tr><td>Sweet potato</td><td>100g</td><td>cubed skin on</td><td class="kc">86</td></tr>
+              <tr><td>Frozen edamame shelled</td><td>80g</td><td>thawed</td><td class="kc">99</td></tr>
+              <tr><td>Cabbage shredded</td><td>80g</td><td>finely shredded</td><td class="kc">20</td></tr>
+              <tr><td>Mixed greens</td><td>40g</td><td>—</td><td class="kc">8</td></tr>
+              <tr><td>Sesame oil</td><td>1 tsp</td><td>dressing</td><td class="kc">40</td></tr>
+              <tr><td>Low-sodium soy sauce</td><td>2 tsp</td><td>tofu + dressing</td><td class="kc">7</td></tr>
+              <tr><td>Ginger + rice vinegar</td><td>1 tsp + 1 tsp</td><td>dressing</td><td class="kc">3</td></tr>
+              <tr><td>Sesame seeds</td><td>1 tsp</td><td>garnish</td><td class="kc">17</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>470</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Preheat oven 200°C. Toss sweet potato with oil spray + salt. Roast 20-25 min flipping halfway.</li>
+              <li>Toss tofu cubes with 1 tsp soy sauce. Add to tray last 10 min — edges will crisp up.</li>
+              <li>Thaw edamame in boiling water 3 min, drain.</li>
+              <li>Make dressing: whisk sesame oil, soy sauce, ginger, rice vinegar and 1 tbsp water.</li>
+              <li>Assemble bowl: greens, cabbage, sweet potato, crispy tofu, edamame. Drizzle dressing. Top with sesame seeds.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Take Milk Thistle. Secret to crispy baked tofu: press well AND coat with soy sauce not oil — it creates a lacquered, chewy exterior.</div></div>
+        </div>
       </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Preheat oven to 220°C/425°F. Line a small baking tray with foil.</li>
-          <li>Cut avocado in half, remove stone. Scoop out a little extra flesh to make the hollow larger (eat it separately or save for later). Squeeze lemon over cut surface.</li>
-          <li>Place avocado halves cut-side up in a muffin tin or prop upright with foil so they don't roll. Season hollows with salt and pepper.</li>
-          <li>Carefully crack 1 small egg into each avocado hollow. If egg is too large, remove some white first.</li>
-          <li>Bake 12–15 min for runny yolk, 15–18 min for fully set. Watch carefully — oven temperatures vary.</li>
-          <li>Top with cherry tomatoes, chives and chilli flakes. Serve with watermelon. Take <strong>Vit D3 + Acetyl L-Carnitine</strong>.</li>
-        </ol>
+    </div>
+    <div class="meal-card meal-di">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">🌙</span><span class="meal-label">Dinner</span></div>
+        <div class="meal-name">Scallop &amp; Shrimp Seafood Salad + Grain Roll</div>
+        <div class="food-emojis">🍤🥗🌽🍅🍋🍞</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 420 kcal</span><span class="mp mp-p">💪 42g protein</span>
+          <span class="mp mp-c">🌾 28g carbs</span><span class="mp mp-f">🥑 10g fat</span><span class="mp mp-fi">🌿 5g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Sea scallops</td><td>100g 3-4 large</td><td>patted dry</td><td class="kc">88</td></tr>
+              <tr><td>Shrimp peeled</td><td>100g</td><td>—</td><td class="kc">85</td></tr>
+              <tr><td>Mixed salad greens</td><td>80g</td><td>—</td><td class="kc">16</td></tr>
+              <tr><td>Cherry tomatoes</td><td>80g</td><td>halved</td><td class="kc">14</td></tr>
+              <tr><td>Corn kernels frozen</td><td>60g</td><td>thawed</td><td class="kc">63</td></tr>
+              <tr><td>Cucumber</td><td>60g</td><td>diced</td><td class="kc">8</td></tr>
+              <tr><td>Lemon juice + olive oil + Dijon</td><td>2 tbsp + 1.5 tsp + 1/4 tsp</td><td>vinaigrette</td><td class="kc">68</td></tr>
+              <tr><td>Whole-grain roll</td><td>1 small 40g</td><td>—</td><td class="kc">100</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>420</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Make lemon vinaigrette: whisk olive oil, lemon juice, Dijon, salt and pepper.</li>
+              <li>Cook shrimp in hot pan with tiny bit of oil, 1-2 min per side.</li>
+              <li>In same pan, sear scallops (VERY dry) over smoking-hot heat, 90 sec per side. Do not move while cooking.</li>
+              <li>Toss salad with vinaigrette. Arrange shrimp and scallops on top.</li>
+              <li>Serve with grain roll. Take Magnesium after dinner.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Using the same pan builds flavour through the fond. Deglaze with a splash of lemon juice to lift those flavours.</div></div>
+        </div>
       </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> Use SMALL eggs — large eggs overflow. The avocado provides oleic acid (same as olive oil) which reduces liver inflammation. This is the most instagrammable breakfast of the week! 📸</div></div>
+    </div>
+  </div>
+  <div class="supp-sched">
+    <h3>💊 Saturday Supplements</h3>
+    <div class="sched-row">
+      <div class="sched-block"><div class="sched-time">🌅 Breakfast</div>
+        <div class="sched-item">☀️ Vitamin D3 — 2000 to 5000 IU</div>
+        <div class="sched-item">🔋 Acetyl L-Carnitine — 500mg</div>
+      </div>
+      <div class="sched-block"><div class="sched-time">☀️ Lunch</div>
+        <div class="sched-item">🌿 Milk Thistle — 140 to 200mg</div>
+      </div>
+      <div class="sched-block"><div class="sched-time">🌙 Dinner / Bed</div>
+        <div class="sched-item">⚡ Magnesium — 300 to 400mg</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-total">
+    <span class="dt-label">📊 Saturday Total</span>
+    <div class="dt-macros">
+      <span class="dtm">🔥 1260 kcal</span><span class="dtm">💪 86g P</span>
+      <span class="dtm">🌾 96g C</span><span class="dtm">🥑 50g F</span><span class="dtm">🌿 21g Fibre</span>
     </div>
   </div>
 </div>
 
-<div class="meal-card meal-lu">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">☀️</span><span class="meal-type-label">Lunch</span></div>
-    <div class="meal-name">Tofu & Veggie Buddha Bowl with Sesame-Ginger Dressing</div>
-    <div class="food-emoji-strip">🧈🍠🫘🥬🌱🫙</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 470 kcal</span><span class="macro-pill mp-prot">💪 26g protein</span>
-      <span class="macro-pill mp-carb">🌾 46g carbs</span><span class="macro-pill mp-fat">🥑 18g fat</span>
-      <span class="macro-pill mp-fib">🌿 9g fibre</span>
-    </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Firm tofu</td><td>150g</td><td>pressed, cubed</td><td class="kcal-col">108</td></tr>
-          <tr><td>Sweet potato</td><td>100g (1 small)</td><td>cubed (skin on)</td><td class="kcal-col">86</td></tr>
-          <tr><td>Frozen edamame (shelled)</td><td>80g</td><td>thawed</td><td class="kcal-col">99</td></tr>
-          <tr><td>Green/red cabbage (shredded)</td><td>80g</td><td>finely shredded</td><td class="kcal-col">20</td></tr>
-          <tr><td>Mixed greens</td><td>40g</td><td>—</td><td class="kcal-col">8</td></tr>
-          <tr><td>Sesame oil</td><td>1 tsp (5ml)</td><td>for dressing</td><td class="kcal-col">40</td></tr>
-          <tr><td>Low-sodium soy sauce</td><td>2 tsp (10ml)</td><td>for tofu + dressing</td><td class="kcal-col">7</td></tr>
-          <tr><td>Fresh ginger</td><td>1 tsp grated</td><td>for dressing</td><td class="kcal-col">2</td></tr>
-          <tr><td>Rice vinegar</td><td>1 tsp</td><td>for dressing</td><td class="kcal-col">1</td></tr>
-          <tr><td>Sesame seeds</td><td>1 tsp (3g)</td><td>garnish</td><td class="kcal-col">17</td></tr>
-          <tr><td>Olive oil spray</td><td>for roasting</td><td>—</td><td class="kcal-col">8</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~470</strong></td></tr>
-        </table>
-      </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Preheat oven 200°C/400°F. Toss sweet potato cubes with olive oil spray and pinch of salt. Roast 20–25 min, flipping halfway.</li>
-          <li>Press and cube tofu. Toss with 1 tsp soy sauce. Add to roasting tray last 10 min of sweet potato cooking — tofu edges will crisp up.</li>
-          <li>Thaw edamame (pour boiling water over, drain after 3 min).</li>
-          <li>Make sesame-ginger dressing: whisk sesame oil, remaining soy sauce, ginger, rice vinegar and 1 tbsp water.</li>
-          <li>Assemble bowl: greens, shredded cabbage, roasted sweet potato, crispy tofu, edamame. Drizzle dressing. Top with sesame seeds. Take <strong>Milk Thistle</strong>.</li>
-        </ol>
-      </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> The secret to crispy baked tofu is pressing it well AND using only a light coating of soy sauce (not oil) — it creates a lacquered, chewy exterior. Edamame has 11g protein per 80g!</div></div>
-    </div>
-  </div>
-</div>
-
-<div class="meal-card meal-di">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">🌙</span><span class="meal-type-label">Dinner</span></div>
-    <div class="meal-name">Scallop & Shrimp Seafood Salad + Whole-Grain Roll</div>
-    <div class="food-emoji-strip">🍤🥗🌽🍅🍋🍞</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 420 kcal</span><span class="macro-pill mp-prot">💪 42g protein</span>
-      <span class="macro-pill mp-carb">🌾 28g carbs</span><span class="macro-pill mp-fat">🥑 10g fat</span>
-      <span class="macro-pill mp-fib">🌿 5g fibre</span>
-    </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Sea scallops</td><td>100g (3–4 large)</td><td>patted dry</td><td class="kcal-col">88</td></tr>
-          <tr><td>Shrimp (peeled, deveined)</td><td>100g</td><td>—</td><td class="kcal-col">85</td></tr>
-          <tr><td>Mixed salad greens</td><td>80g</td><td>—</td><td class="kcal-col">16</td></tr>
-          <tr><td>Cherry tomatoes</td><td>80g</td><td>halved</td><td class="kcal-col">14</td></tr>
-          <tr><td>Corn kernels (frozen)</td><td>60g</td><td>thawed</td><td class="kcal-col">63</td></tr>
-          <tr><td>Cucumber</td><td>60g</td><td>diced</td><td class="kcal-col">8</td></tr>
-          <tr><td>Lemon juice</td><td>2 tbsp</td><td>—</td><td class="kcal-col">5</td></tr>
-          <tr><td>Olive oil</td><td>1½ tsp (7ml)</td><td>for dressing + searing</td><td class="kcal-col">63</td></tr>
-          <tr><td>Dijon mustard</td><td>¼ tsp</td><td>for vinaigrette</td><td class="kcal-col">2</td></tr>
-          <tr><td>Whole-grain roll</td><td>1 small (40g)</td><td>—</td><td class="kcal-col">100</td></tr>
-          <tr><td>Salt, black pepper</td><td>pinch each</td><td>—</td><td class="kcal-col">0</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~420</strong></td></tr>
-        </table>
-      </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Make lemon vinaigrette: whisk 1 tsp olive oil, lemon juice, Dijon mustard, salt and pepper. Set aside.</li>
-          <li>Cook shrimp in a hot pan with ¼ tsp olive oil. 1–2 min per side. Remove.</li>
-          <li>In the same pan, sear scallops (patted dry) over VERY high heat, ½ tsp olive oil. 90 seconds per side. Do not move while cooking.</li>
-          <li>Toss salad greens, cherry tomatoes, corn and cucumber with the vinaigrette.</li>
-          <li>Plate salad, arrange shrimp and scallops on top. Serve with whole-grain roll. Take <strong>Magnesium</strong> after dinner.</li>
-        </ol>
-      </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> Using the same pan for both shrimp and scallops builds flavour through the fond (brown bits). Deglaze with a splash of white wine or lemon juice to lift those flavours into the dish.</div></div>
-    </div>
-  </div>
-</div>
-```
-
-  </div>
-  <div class="supp-schedule">
-    <h3>💊 Saturday Supplement Schedule</h3>
-    <div class="supp-time-row">
-      <div class="supp-time-block"><div class="time-label">🌅 Breakfast</div>
-        <div class="supp-item">☀️ Vitamin D3 — 2000–5000 IU</div>
-        <div class="supp-item">🔋 Acetyl L-Carnitine — 500mg</div>
-      </div>
-      <div class="supp-time-block"><div class="time-label">☀️ Lunch</div>
-        <div class="supp-item">🌿 Milk Thistle — 140–200mg</div>
-      </div>
-      <div class="supp-time-block"><div class="time-label">🌙 Dinner / Bedtime</div>
-        <div class="supp-item">⚡ Magnesium Glycinate — 300–400mg</div>
-      </div>
-    </div>
-  </div>
-  <div class="day-total-bar">
-    <span class="day-total-label">📊 Saturday Total</span>
-    <div class="day-total-macros">
-      <span class="dtm">🔥 1260 kcal</span><span class="dtm">💪 86g Protein</span>
-      <span class="dtm">🌾 96g Carbs</span><span class="dtm">🥑 50g Fat</span><span class="dtm">🌿 21g Fibre</span>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     SUNDAY
-═══════════════════════════════════════════════════════════════ -->
+<!-- ══════════ SUNDAY ══════════ -->
 
 <div id="day-sun" class="day-panel">
   <div class="day-header">
     <div class="day-emoji">☀️</div>
-    <div class="day-title">Sunday — Treat Yourself (Healthy!) 😄</div>
-    <div class="day-macro-strip">
-      <div class="day-macro-chip" style="background:#fff3cd;color:#856404">🔥 1260 kcal</div>
-      <div class="day-macro-chip" style="background:#d4edda;color:#155724">💪 78g P</div>
-      <div class="day-macro-chip" style="background:#cce5ff;color:#004085">🌾 114g C</div>
-      <div class="day-macro-chip" style="background:#ffe5d0;color:#7a3419">🥑 46g F</div>
-      <div class="day-macro-chip" style="background:#e2d9f3;color:#432874">🌿 23g Fib</div>
+    <div class="day-title">Sunday — Treat Yourself Healthy!</div>
+    <div class="day-chips">
+      <span class="dchip" style="background:#fff3cd;color:#856404">🔥 1260 kcal</span>
+      <span class="dchip" style="background:#d4edda;color:#155724">💪 78g P</span>
+      <span class="dchip" style="background:#cce5ff;color:#004085">🌾 114g C</span>
+      <span class="dchip" style="background:#ffe5d0;color:#7a3419">🥑 46g F</span>
     </div>
   </div>
   <div class="meals-grid">
-
-```
-<div class="meal-card meal-bf">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">🌅</span><span class="meal-type-label">Breakfast</span></div>
-    <div class="meal-name">Smoked Salmon Eggs + Cucumber + Toast + Berries</div>
-    <div class="food-emoji-strip">🐟🥚🥚🥒🍞🫐</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 400 kcal</span><span class="macro-pill mp-prot">💪 30g protein</span>
-      <span class="macro-pill mp-carb">🌾 24g carbs</span><span class="macro-pill mp-fat">🥑 16g fat</span>
-      <span class="macro-pill mp-fib">🌿 4g fibre</span>
+    <div class="meal-card meal-bf">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">🌅</span><span class="meal-label">Breakfast</span></div>
+        <div class="meal-name">Smoked Salmon + Scrambled Eggs + Cucumber Toast + Berries</div>
+        <div class="food-emojis">🐟🥚🥒🍞🫐</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 400 kcal</span><span class="mp mp-p">💪 30g protein</span>
+          <span class="mp mp-c">🌾 24g carbs</span><span class="mp mp-f">🥑 16g fat</span><span class="mp mp-fi">🌿 4g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Smoked salmon slices</td><td>80g</td><td>ready to eat</td><td class="kc">105</td></tr>
+              <tr><td>Large eggs</td><td>2</td><td>for scrambling</td><td class="kc">140</td></tr>
+              <tr><td>Whole-grain bread</td><td>1 slice 35g</td><td>toasted</td><td class="kc">85</td></tr>
+              <tr><td>Cucumber</td><td>80g</td><td>thin rounds</td><td class="kc">11</td></tr>
+              <tr><td>Mixed fresh berries</td><td>100g</td><td>—</td><td class="kc">35</td></tr>
+              <tr><td>Low-fat cream cheese</td><td>15g</td><td>optional on toast</td><td class="kc">24</td></tr>
+              <tr><td>Capers + fresh dill</td><td>5g + 5g</td><td>optional garnish</td><td class="kc">3</td></tr>
+              <tr><td>Butter</td><td>1/2 tsp</td><td>for scrambling</td><td class="kc">17</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>400</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Whisk 2 eggs with salt and pepper.</li>
+              <li>Toast bread. Spread with cream cheese if using. Layer cucumber rounds on top.</li>
+              <li>Heat butter in pan over LOW heat. Add eggs. Push gently with spatula every 30 sec — do NOT scramble vigorously.</li>
+              <li>Remove from heat while still slightly wet — residual heat finishes cooking. Plate next to toast.</li>
+              <li>Lay smoked salmon on toast. Add capers and dill. Berries on the side.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Take Vit D3 + Acetyl L-Carnitine. Smoked salmon contains astaxanthin — a powerful antioxidant that specifically targets liver inflammation.</div></div>
+        </div>
+      </div>
     </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Smoked salmon (slices)</td><td>80g</td><td>ready to eat</td><td class="kcal-col">105</td></tr>
-          <tr><td>Large eggs</td><td>2 whole</td><td>for scrambling</td><td class="kcal-col">140</td></tr>
-          <tr><td>Whole-grain bread</td><td>1 slice (35g)</td><td>toasted</td><td class="kcal-col">85</td></tr>
-          <tr><td>Cucumber</td><td>80g (½ small)</td><td>thinly sliced rounds</td><td class="kcal-col">11</td></tr>
-          <tr><td>Mixed fresh berries</td><td>100g</td><td>—</td><td class="kcal-col">35</td></tr>
-          <tr><td>Low-fat cream cheese (optional)</td><td>15g (1 tbsp)</td><td>for toast</td><td class="kcal-col">24</td></tr>
-          <tr><td>Capers (optional)</td><td>5g (1 tsp)</td><td>rinsed</td><td class="kcal-col">1</td></tr>
-          <tr><td>Fresh dill</td><td>5g</td><td>—</td><td class="kcal-col">2</td></tr>
-          <tr><td>Olive oil spray / unsalted butter</td><td>½ tsp</td><td>for scrambling eggs</td><td class="kcal-col">17</td></tr>
-          <tr><td>Lemon</td><td>few drops</td><td>over salmon</td><td class="kcal-col">1</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~400</strong></td></tr>
-        </table>
+    <div class="meal-card meal-lu">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">☀️</span><span class="meal-label">Lunch</span></div>
+        <div class="meal-name">Hearty Lentil Soup + Big Chickpea Salad + Pear</div>
+        <div class="food-emojis">🍲🫘🥗🌿🍋🍐</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 450 kcal</span><span class="mp mp-p">💪 22g protein</span>
+          <span class="mp mp-c">🌾 58g carbs</span><span class="mp mp-f">🥑 10g fat</span><span class="mp mp-fi">🌿 14g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Brown lentils dry</td><td>50g</td><td>rinsed</td><td class="kc">172</td></tr>
+              <tr><td>Carrot + celery + onion</td><td>60g + 40g + 50g</td><td>diced</td><td class="kc">51</td></tr>
+              <tr><td>Garlic + veg stock</td><td>2 cloves + 400ml</td><td>low sodium</td><td class="kc">19</td></tr>
+              <tr><td>Cumin + coriander</td><td>1/2 tsp each</td><td>—</td><td class="kc">6</td></tr>
+              <tr><td>Olive oil</td><td>1 tsp</td><td>—</td><td class="kc">40</td></tr>
+              <tr><td>Canned white chickpeas</td><td>100g drained</td><td>rinsed</td><td class="kc">130</td></tr>
+              <tr><td>Mixed greens + cucumber + tomatoes</td><td>50g + 60g + 60g</td><td>—</td><td class="kc">28</td></tr>
+              <tr><td>Lemon + olive oil dressing</td><td>1 tbsp + 1/2 tsp</td><td>—</td><td class="kc">24</td></tr>
+              <tr><td>Pear</td><td>1 medium 170g</td><td>sliced</td><td class="kc">96</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>450</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Sauté onion, carrot, celery in olive oil 5 min. Add garlic + spices, cook 1 min.</li>
+              <li>Add rinsed lentils + stock. Boil then simmer 20-25 min until lentils are tender. Season with lemon juice and salt.</li>
+              <li>Assemble salad: toss greens, chickpeas, cucumber, tomatoes with olive oil and lemon. Season.</li>
+              <li>Serve 2 cups soup alongside salad. Sliced pear as dessert. Take Milk Thistle.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Highest fibre meal of the week at 14g! Lentils contain beta-glucan which directly lowers LDL cholesterol. Freeze extra soup in portions.</div></div>
+        </div>
       </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Whisk 2 eggs with a pinch of salt and pepper. Set aside.</li>
-          <li>Toast bread. Spread with cream cheese if using.</li>
-          <li>Heat ½ tsp butter in a non-stick pan over LOW heat (low and slow = creamy scrambled eggs). Add eggs.</li>
-          <li>Gently push eggs with a spatula every 30 seconds, folding them — do NOT scramble vigorously. Remove from heat while still slightly wet-looking (residual heat will finish cooking).</li>
-          <li>Layer cucumber slices on toast. Add smoked salmon. Squeeze lemon. Top with capers and dill.</li>
-          <li>Serve scrambled eggs alongside toast + salmon. Berries on the side. Take <strong>Vit D3 + Acetyl L-Carnitine</strong>.</li>
-        </ol>
-      </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> Smoked salmon is rich in omega-3s AND astaxanthin — a powerful antioxidant that specifically targets liver inflammation. Low and slow for scrambled eggs = the French technique for the creamiest results.</div></div>
     </div>
-  </div>
-</div>
-
-<div class="meal-card meal-lu">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">☀️</span><span class="meal-type-label">Lunch</span></div>
-    <div class="meal-name">Hearty Lentil & Veggie Soup + Big Chickpea Salad + Pear</div>
-    <div class="food-emoji-strip">🍲🫘🥗🌿🍋🍐</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 450 kcal</span><span class="macro-pill mp-prot">💪 22g protein</span>
-      <span class="macro-pill mp-carb">🌾 58g carbs</span><span class="macro-pill mp-fat">🥑 10g fat</span>
-      <span class="macro-pill mp-fib">🌿 14g fibre</span>
-    </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients — Soup</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Brown/green lentils (dry)</td><td>50g</td><td>rinsed</td><td class="kcal-col">172</td></tr>
-          <tr><td>Carrot</td><td>60g</td><td>small dice</td><td class="kcal-col">25</td></tr>
-          <tr><td>Celery stalk</td><td>40g (1 stalk)</td><td>sliced</td><td class="kcal-col">6</td></tr>
-          <tr><td>Onion</td><td>50g</td><td>diced</td><td class="kcal-col">20</td></tr>
-          <tr><td>Garlic (2 cloves)</td><td>6g</td><td>minced</td><td class="kcal-col">9</td></tr>
-          <tr><td>Low-sodium vegetable stock</td><td>400ml</td><td>—</td><td class="kcal-col">10</td></tr>
-          <tr><td>Olive oil</td><td>1 tsp (5ml)</td><td>—</td><td class="kcal-col">40</td></tr>
-          <tr><td>Cumin + coriander powder</td><td>½ tsp each</td><td>—</td><td class="kcal-col">6</td></tr>
-        </table>
-      </div>
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients — Salad</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Canned white chickpeas</td><td>100g drained</td><td>rinsed</td><td class="kcal-col">130</td></tr>
-          <tr><td>Mixed greens + arugula</td><td>50g</td><td>—</td><td class="kcal-col">10</td></tr>
-          <tr><td>Cucumber + cherry tomatoes</td><td>60g + 60g</td><td>diced</td><td class="kcal-col">18</td></tr>
-          <tr><td>Olive oil (dressing)</td><td>½ tsp</td><td>—</td><td class="kcal-col">20</td></tr>
-          <tr><td>Lemon juice (dressing)</td><td>1 tbsp</td><td>—</td><td class="kcal-col">4</td></tr>
-          <tr><td>Pear</td><td>1 medium (170g)</td><td>sliced</td><td class="kcal-col">96</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>COMBINED TOTAL</strong></td><td class="kcal-col"><strong>~450</strong></td></tr>
-        </table>
-      </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Sauté onion, carrot and celery in olive oil over medium heat 5 min. Add garlic, cumin, coriander — cook 1 min until fragrant.</li>
-          <li>Add rinsed lentils and stock. Bring to boil. Reduce heat, simmer 20–25 min until lentils are completely tender.</li>
-          <li>Season with salt and black pepper. Add a squeeze of lemon at the end. Blend ¼ of the soup if you prefer a creamier texture.</li>
-          <li>Assemble salad: toss greens, chickpeas, cucumber and tomatoes with olive oil and lemon. Season.</li>
-          <li>Serve soup (2 cups) alongside salad. Sliced pear as dessert. Take <strong>Milk Thistle</strong>.</li>
-        </ol>
-      </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> This meal has the HIGHEST fibre of the week at 14g! Lentils contain beta-glucan which directly lowers LDL cholesterol — important for fatty liver. Make a big batch of soup and freeze portions.</div></div>
-    </div>
-  </div>
-</div>
-
-<div class="meal-card meal-di">
-  <div class="meal-top-bar"></div><div class="meal-body">
-    <div class="meal-header"><span class="meal-type-icon">🌙</span><span class="meal-type-label">Dinner</span></div>
-    <div class="meal-name">Grilled Paneer & Veggie Skewers + Tzatziki + Potato Wedges</div>
-    <div class="food-emoji-strip">🧀🥒🍅🧅🫙🥔🍋</div>
-    <div class="macro-row">
-      <span class="macro-pill mp-kcal">🔥 410 kcal</span><span class="macro-pill mp-prot">💪 26g protein</span>
-      <span class="macro-pill mp-carb">🌾 32g carbs</span><span class="macro-pill mp-fat">🥑 20g fat</span>
-      <span class="macro-pill mp-fib">🌿 5g fibre</span>
-    </div>
-    <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
-    <div class="recipe-panel">
-      <div class="recipe-section"><div class="rs-title">🛒 Ingredients</div>
-        <table class="ing-table">
-          <tr><th>Ingredient</th><th>Quantity</th><th>Prep</th><th class="kcal-col">kcal</th></tr>
-          <tr><td>Paneer</td><td>120g</td><td>2cm cubes</td><td class="kcal-col">300</td></tr>
-          <tr><td>Zucchini</td><td>80g</td><td>thick rounds</td><td class="kcal-col">14</td></tr>
-          <tr><td>Cherry tomatoes</td><td>60g (5–6)</td><td>whole</td><td class="kcal-col">11</td></tr>
-          <tr><td>Red onion</td><td>60g (½ small)</td><td>wedges</td><td class="kcal-col">24</td></tr>
-          <tr><td>Baby potatoes</td><td>100g</td><td>halved</td><td class="kcal-col">77</td></tr>
-          <tr><td>Low-fat Greek yogurt (tzatziki)</td><td>80g</td><td>—</td><td class="kcal-col">48</td></tr>
-          <tr><td>Cucumber (tzatziki)</td><td>40g</td><td>grated, squeezed dry</td><td class="kcal-col">5</td></tr>
-          <tr><td>Garlic clove (tzatziki)</td><td>½ clove</td><td>minced or grated</td><td class="kcal-col">2</td></tr>
-          <tr><td>Dill / mint (tzatziki)</td><td>5g</td><td>chopped</td><td class="kcal-col">1</td></tr>
-          <tr><td>Olive oil</td><td>1 tsp (5ml)</td><td>for marinade</td><td class="kcal-col">40</td></tr>
-          <tr><td>Lemon juice + zest</td><td>½ lemon</td><td>—</td><td class="kcal-col">8</td></tr>
-          <tr><td>Paprika + oregano</td><td>½ tsp each</td><td>for marinade</td><td class="kcal-col">4</td></tr>
-          <tr class="ing-row-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kcal-col"><strong>~410</strong></td></tr>
-        </table>
-      </div>
-      <div class="recipe-section"><div class="rs-title">👨‍🍳 Method</div>
-        <ol class="steps-list">
-          <li>Make tzatziki: grate cucumber, squeeze out ALL excess water in a clean cloth. Mix with Greek yogurt, garlic, dill, pinch of salt. Refrigerate.</li>
-          <li>Marinate paneer and vegetables: mix olive oil, lemon juice, paprika, oregano and salt. Toss paneer, zucchini, tomatoes and onion in marinade. Rest 20 min minimum.</li>
-          <li>Roast potato wedges: toss with pinch of salt and olive oil spray. Bake at 200°C/400°F for 25 min until golden.</li>
-          <li>Thread paneer and vegetables alternately onto skewers (soak wooden skewers 20 min first to prevent burning).</li>
-          <li>Grill skewers on high heat (BBQ, grill pan or oven grill) 3–4 min per side until paneer is charred and vegetables are slightly soft.</li>
-          <li>Serve skewers with potato wedges and tzatziki. Take <strong>Magnesium</strong> after dinner.</li>
-        </ol>
-      </div>
-      <div class="recipe-section"><div class="tip-box">💡 <strong>Tip:</strong> Squeeze every last drop of water from the cucumber before making tzatziki — otherwise it will become watery within 30 min. Greek yogurt provides probiotics which support gut-liver axis health.</div></div>
-    </div>
-  </div>
-</div>
-```
-
-  </div>
-  <div class="supp-schedule">
-    <h3>💊 Sunday Supplement Schedule</h3>
-    <div class="supp-time-row">
-      <div class="supp-time-block"><div class="time-label">🌅 Breakfast</div>
-        <div class="supp-item">☀️ Vitamin D3 — 2000–5000 IU</div>
-        <div class="supp-item">🔋 Acetyl L-Carnitine — 500mg</div>
-      </div>
-      <div class="supp-time-block"><div class="time-label">☀️ Lunch</div>
-        <div class="supp-item">🌿 Milk Thistle — 140–200mg</div>
-      </div>
-      <div class="supp-time-block"><div class="time-label">🌙 Dinner / Bedtime</div>
-        <div class="supp-item">⚡ Magnesium Glycinate — 300–400mg</div>
+    <div class="meal-card meal-di">
+      <div class="meal-top"></div><div class="meal-body">
+        <div class="meal-header"><span class="meal-icon">🌙</span><span class="meal-label">Dinner</span></div>
+        <div class="meal-name">Grilled Paneer Skewers + Tzatziki + Potato Wedges</div>
+        <div class="food-emojis">🧀🥒🍅🧅🫙🥔🍋</div>
+        <div class="macro-row">
+          <span class="mp mp-k">🔥 410 kcal</span><span class="mp mp-p">💪 26g protein</span>
+          <span class="mp mp-c">🌾 32g carbs</span><span class="mp mp-f">🥑 20g fat</span><span class="mp mp-fi">🌿 5g fibre</span>
+        </div>
+        <button class="recipe-btn" onclick="toggleRecipe(this)">📖 View Full Recipe <span class="arrow">▼</span></button>
+        <div class="recipe-panel">
+          <div class="rs"><div class="rs-title">🛒 Ingredients</div>
+            <table class="ing-table">
+              <tr><th>Ingredient</th><th>Qty</th><th>Prep</th><th class="kc">kcal</th></tr>
+              <tr><td>Paneer</td><td>120g</td><td>2cm cubes</td><td class="kc">300</td></tr>
+              <tr><td>Zucchini + tomatoes + onion</td><td>80g + 60g + 60g</td><td>chunks for skewers</td><td class="kc">49</td></tr>
+              <tr><td>Baby potatoes</td><td>100g</td><td>halved</td><td class="kc">77</td></tr>
+              <tr><td>Greek yogurt tzatziki</td><td>80g</td><td>—</td><td class="kc">48</td></tr>
+              <tr><td>Cucumber grated for tzatziki</td><td>40g</td><td>squeezed very dry</td><td class="kc">5</td></tr>
+              <tr><td>Garlic + dill</td><td>1/2 clove + 5g</td><td>tzatziki</td><td class="kc">3</td></tr>
+              <tr><td>Olive oil</td><td>1 tsp</td><td>marinade</td><td class="kc">40</td></tr>
+              <tr><td>Lemon + paprika + oregano</td><td>1/2 + 1/2 + 1/2 tsp</td><td>marinade</td><td class="kc">12</td></tr>
+              <tr class="ing-total"><td colspan="3"><strong>TOTAL</strong></td><td class="kc"><strong>410</strong></td></tr>
+            </table>
+          </div>
+          <div class="rs"><div class="rs-title">👨‍🍳 Method</div>
+            <ol class="steps">
+              <li>Tzatziki: grate cucumber, squeeze out ALL water in a cloth. Mix with yogurt, garlic, dill, salt. Refrigerate.</li>
+              <li>Marinate paneer and veg chunks in olive oil, lemon, paprika, oregano and salt for 20 min.</li>
+              <li>Roast potato wedges at 200°C for 25 min until golden.</li>
+              <li>Thread paneer and veg onto skewers. Grill on high heat 3-4 min per side until charred.</li>
+              <li>Serve skewers with potato wedges and tzatziki. Take Magnesium after dinner.</li>
+            </ol>
+          </div>
+          <div class="rs"><div class="tip-box">💡 Squeeze every drop of water from cucumber for tzatziki — it turns watery within 30 min otherwise. Greek yogurt provides probiotics that support gut-liver axis health.</div></div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="day-total-bar">
-    <span class="day-total-label">📊 Sunday Total</span>
-    <div class="day-total-macros">
-      <span class="dtm">🔥 1260 kcal</span><span class="dtm">💪 78g Protein</span>
-      <span class="dtm">🌾 114g Carbs</span><span class="dtm">🥑 46g Fat</span><span class="dtm">🌿 23g Fibre</span>
+  <div class="supp-sched">
+    <h3>💊 Sunday Supplements</h3>
+    <div class="sched-row">
+      <div class="sched-block"><div class="sched-time">🌅 Breakfast</div>
+        <div class="sched-item">☀️ Vitamin D3 — 2000 to 5000 IU</div>
+        <div class="sched-item">🔋 Acetyl L-Carnitine — 500mg</div>
+      </div>
+      <div class="sched-block"><div class="sched-time">☀️ Lunch</div>
+        <div class="sched-item">🌿 Milk Thistle — 140 to 200mg</div>
+      </div>
+      <div class="sched-block"><div class="sched-time">🌙 Dinner / Bed</div>
+        <div class="sched-item">⚡ Magnesium — 300 to 400mg</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-total">
+    <span class="dt-label">📊 Sunday Total</span>
+    <div class="dt-macros">
+      <span class="dtm">🔥 1260 kcal</span><span class="dtm">💪 78g P</span>
+      <span class="dtm">🌾 114g C</span><span class="dtm">🥑 46g F</span><span class="dtm">🌿 23g Fibre</span>
     </div>
   </div>
 </div>
 
 <!-- TIPS -->
 
-<div class="section-title" style="margin-top:50px"><span>🫀</span> Fatty Liver Care Tips <span>💚</span></div>
+<div class="section-title" style="margin-top:46px">🫀 Fatty Liver Care Tips 💚</div>
 <div class="tips-grid">
   <div class="tip-card" style="background:linear-gradient(145deg,#d5f5e3,#a9dfbf)">
     <div class="tip-emoji">🐟</div><div class="tip-title" style="color:#1a8a4a">Omega-3 Every Day</div>
-    <div class="tip-text">Salmon, shrimp & scallops 4×/week — the #1 dietary intervention for fatty liver</div>
+    <div class="tip-text">Salmon, shrimp and scallops 4x per week — the #1 dietary intervention for fatty liver</div>
   </div>
   <div class="tip-card" style="background:linear-gradient(145deg,#d6eaf8,#a9cce3)">
     <div class="tip-emoji">🚫🍺</div><div class="tip-title" style="color:#1a6fa0">Zero Alcohol</div>
-    <div class="tip-text">Even small amounts worsen fatty liver. Sparkling water + lemon = your new drink!</div>
+    <div class="tip-text">Even small amounts worsen fatty liver. Sparkling water + lemon is your new drink!</div>
   </div>
   <div class="tip-card" style="background:linear-gradient(145deg,#fdebd0,#f8c471)">
     <div class="tip-emoji">💧</div><div class="tip-title" style="color:#d35400">Hydrate Well</div>
-    <div class="tip-text">2–2.5 litres of water daily. Your liver needs water to process and flush toxins</div>
+    <div class="tip-text">2 to 2.5 litres of water daily. Your liver needs water to process and flush toxins</div>
   </div>
   <div class="tip-card" style="background:linear-gradient(145deg,#e8daef,#d2b4de)">
     <div class="tip-emoji">🚫🍬</div><div class="tip-title" style="color:#6c3483">No Added Sugar</div>
@@ -1579,37 +1361,35 @@ animation:floatDeco 6s ease-in-out infinite;z-index:0;}
   </div>
   <div class="tip-card" style="background:linear-gradient(145deg,#fdfefe,#d1f2eb)">
     <div class="tip-emoji">🔥</div><div class="tip-title" style="color:#148f77">Cooking Methods</div>
-    <div class="tip-text">Grill · Bake · Steam · Poach · Air-fry. Max 2 tsp olive oil per day total</div>
+    <div class="tip-text">Grill, Bake, Steam, Poach, Air-fry. Max 2 tsp olive oil per day total</div>
   </div>
   <div class="tip-card" style="background:linear-gradient(145deg,#fdedec,#f1948a)">
     <div class="tip-emoji">🚶</div><div class="tip-title" style="color:#922b21">Walk After Meals</div>
-    <div class="tip-text">A 20–30 min walk after dinner reduces blood glucose by up to 30% and burns liver fat</div>
+    <div class="tip-text">A 20 to 30 min walk after dinner reduces blood glucose by up to 30% and burns liver fat</div>
   </div>
 </div>
 
 <div class="footer">
   ⚠️ Consult your doctor or dietitian before starting any new supplement regimen, especially with a diagnosed liver condition.<br>
-  Calorie counts are estimates based on standard nutritional data — use a kitchen scale for precision.<br><br>
+  Calorie counts are estimates — use a kitchen scale for precision.<br><br>
   🥗 Made with 💚 for your health journey — You've got this! 🌟
 </div>
 
 </div>
 
 <script>
-function showDay(id,btn){
-  document.querySelectorAll('.day-panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.day-tab').forEach(t=>t.classList.remove('active'));
-  document.getElementById('day-'+id).classList.add('active');
+function showDay(id, btn) {
+  document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('day-' + id).classList.add('active');
   btn.classList.add('active');
-  // scroll to top of day panel
-  document.getElementById('day-'+id).scrollIntoView({behavior:'smooth',block:'start'});
+  document.getElementById('day-' + id).scrollIntoView({behavior:'smooth', block:'start'});
 }
-function toggleRecipe(btn){
-  const panel=btn.nextElementSibling;
-  const isOpen=panel.classList.contains('open');
-  panel.classList.toggle('open',!isOpen);
-  btn.classList.toggle('open',!isOpen);
-  btn.querySelector('.arrow').style.transform=isOpen?'':'rotate(180deg)';
+function toggleRecipe(btn) {
+  const panel = btn.nextElementSibling;
+  const isOpen = panel.classList.contains('open');
+  panel.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
 }
 </script>
 
